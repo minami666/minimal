@@ -7,7 +7,7 @@
   .header__3
     - if user_signed_in?
       .header__3--mypage
-        = link_to "マイページ",_path
+        = link_to "マイページ",user_path(current_user)
       .header__3--logout
         = link_to "ログアウト",destroy_user_session_path
     - else
