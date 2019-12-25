@@ -1,5 +1,6 @@
 .header{
-  background-color: pink;
+  z-index: 9999;
+  background-color: rgba(228, 228, 228,0.5);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -21,6 +22,5 @@
     &--login{
       background-color: purple;
     }
-
   }
 }
