@@ -1,3 +1,15 @@
+/* リセットCSSなど */
+@import "reset";
+@import "font-awesome";
+
+/* 全ページ共通の要素 */
+@import 'partial/header';
+@import 'partial/footer';
+
+.wrapper{
+  min-height: 100vh;
+  position: relative;
+}
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.

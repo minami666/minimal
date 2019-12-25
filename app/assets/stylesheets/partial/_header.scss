@@ -1,0 +1,26 @@
+.header{
+  background-color: pink;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 4vh;
+  width: auto;
+  &__1{
+    background-color: blue;
+  }
+  &__2{
+    background-color: red;
+  }
+  &__3{
+    display: flex;
+    flex-direction: row;
+    &--registration{
+      background-color: yellow;
+      margin-right: 10px;
+    }
+    &--login{
+      background-color: purple;
+    }
+
+  }
+}

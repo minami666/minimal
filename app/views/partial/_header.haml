@@ -1,0 +1,17 @@
+.header
+  .header__1
+    %p MINIMA
+
+  .header__2
+    %p 検索フォーム
+  .header__3
+    - if user_signed_in?
+      .header__3--mypage
+        %p マイページボタン
+      .header__3--logout
+        %p ログアウトボタン
+    - else
+      .header__3--registration
+        新規登録ボタン
+      .header__3--login
+        ログインボタン
