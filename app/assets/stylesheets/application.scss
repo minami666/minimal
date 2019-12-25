@@ -26,5 +26,7 @@
  * It is generally better to create a new file per style scope.
  *
  *= require_tree .
+ *= require twitter_bootstrap/bootstrap.min.css
+ *= require twitter_bootstrap/bootstrap-responsive.min.css
  *= require_self
  */
