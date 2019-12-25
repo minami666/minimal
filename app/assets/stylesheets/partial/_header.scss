@@ -1,0 +1,64 @@
+.header{
+  z-index: 9999;
+  background-color: rgba(228, 228, 228,0.5);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  width: auto;
+  &__1{
+    background-color: blue;
+    margin-left: 20px;
+  }
+  &__2{
+    background-color: red;
+  }
+  &__3{
+    display: flex;
+    flex-direction: row;
+    margin-right: 20px;
+    &--mypage{
+      background-color: white;
+      padding: 5px;
+      border: 1px solid rgb(26, 144, 255);
+      border-radius: 5px;
+      margin-right: 20px;
+      a{
+        text-decoration: none;
+        color: rgb(26, 144, 255);
+      }
+    }
+    &--logout{
+      background-color: white;
+      padding: 5px;
+      border: 1px solid rgb(26, 144, 255);
+      border-radius: 5px;
+      a{
+        text-decoration: none;
+        color: rgb(26, 144, 255);
+      }
+    }
+    &--registration{
+      background-color: red;
+      color: white;
+      padding: 5px;
+      border: 1px solid rgb(255, 0, 0);
+      border-radius: 5px;
+      margin-right: 20px;
+      a{
+        text-decoration: none;
+        color: white;
+      }
+    }
+    &--login{
+      background-color: white;
+      padding: 5px;
+      border: 1px solid rgb(26, 144, 255);
+      border-radius: 5px;
+      a{
+        text-decoration: none;
+        color: rgb(26, 144, 255);
+      }
+    }
+  }
+}

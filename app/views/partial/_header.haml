@@ -1,0 +1,17 @@
+.header
+  .header__1
+    = link_to "MINIMA",root_path
+
+  .header__2
+    %p 検索フォーム
+  .header__3
+    - if user_signed_in?
+      .header__3--mypage
+        = link_to "マイページ",user_path(current_user)
+      .header__3--logout
+        = link_to "ログアウト",destroy_user_session_path, method: :delete
+    - else
+      .header__3--registration
+        = link_to "新規登録",new_user_registration_path
+      .header__3--login
+        = link_to "ログイン",new_user_session_path
