@@ -1,2 +1,13 @@
-.users__show
-  = @user.email
+= render "partial/header"
+
+.users__show__roomimages
+  = "#{@user.nickname}さんの部屋"
+  - if @user.roomimages.present?
+    - @user.roomimages.each do |r|
+      = image_tag r.image.url
+  - else
+    %p 投稿はまだありません
+
+  = link_to "投稿する",new_roomimage_path
+
+= render "partial/footer"

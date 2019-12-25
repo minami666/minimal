@@ -1,4 +1,6 @@
 /* リセットCSSなど */
+// Custom bootstrap variables must be set or imported *before* bootstrap.
+@import "bootstrap";
 @import "reset";
 @import "font-awesome";
 
@@ -10,8 +12,6 @@
 .wrapper{
   min-height: 100vh;
   position: relative;
-  background-image: url(https://i.ytimg.com/vi/W0rlEVh1Z9w/maxresdefault.jpg);
-  background-size: cover;
 }
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
@@ -29,4 +29,7 @@
  *= require twitter_bootstrap/bootstrap.min.css
  *= require twitter_bootstrap/bootstrap-responsive.min.css
  *= require_self
+ *= require jquery3
+ *= require popper
+ *= require bootstrap-sprockets
  */

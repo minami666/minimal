@@ -7,4 +7,7 @@ Rails.application.routes.draw do
 # ================ ユーザー ================
   resources :users
 
+# ================ 部屋の写真 ================
+  resources :roomimages
+
 end

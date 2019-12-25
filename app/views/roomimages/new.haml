@@ -1,0 +1,10 @@
+= render "partial/header"
+
+.roomimages__new__form
+  = form_for(@roomimage,multipart: true,url: roomimages_path,method: :post) do |r|
+    = r.file_field :image
+    %br/
+    = r.text_field :text,placeholder: "入力しよう"
+    = r.submit "投稿する"
+
+= render "partial/footer"
