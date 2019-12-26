@@ -1,5 +1,8 @@
 = render "partial/header"
 
 .homes__index
+  %p 人気の写真
+  - @rooms.last(10).each do |r|
+    = image_tag r.image.url
 
 = render "partial/footer"
