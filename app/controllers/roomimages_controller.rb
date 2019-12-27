@@ -6,7 +6,6 @@ class RoomimagesController < ApplicationController
   end
 
   def create
-    # binding.pry
     @roomimage = Roomimage.create!(roomimages_params)
     if @roomimage.save
       redirect_to user_path(current_user)
@@ -15,9 +14,21 @@ class RoomimagesController < ApplicationController
     end
   end
 
+  def edit
+    @room = Roomimage.find(params[:id])
+  end
+
+  def update
+    @room = Roomimage.find(params[:id])
+    @room.save!
+    redirect_to user_path(current_user)
+  end
+
+
   def destroy
-    @roomimage = Roomimage.find_by(user_id: current_user.id)
-    @roomimage.destroy
+    room = Roomimage.find(params[:id])
+    room.destroy
+    redirect_to user_path(current_user)
   end
 
   private
