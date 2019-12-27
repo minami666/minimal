@@ -2,7 +2,7 @@
   width: 1500px;
   height: 2000px;
   margin: 0 auto;
-// ==================== プロフィール ====================
+// ==================== ①プロフィール ====================
   padding: 100px 50px 0;
   &__profile{
     margin: 0 auto;
@@ -98,7 +98,7 @@
       }
     }
   }
-// ==================== 部屋 ====================
+// ==================== ②部屋 ====================
   &__roomimages{
     width: auto;
     height: 400px;
@@ -156,8 +156,65 @@
       }
     }
   }
-// ==================== モノ ====================
+// ==================== ③モノ ====================
   &__items{
+    width: auto;
+    height: 400px;
+    margin: 25px 0;
+    display: flex;
+    flex-direction: column;
+    &__box1{
+      margin-bottom: 10px;
+      height: 30px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      &__left{
+        display: flex;
+        &--title{
+          height: 30px;
+          line-height: 30px;
+          font-size: 20px;
+          margin-right: 50px;
+          opacity: 0.5;
+        }
+        &--more{
+          height: 30px;
+          line-height: 30px;
+          font-size: px;
+        }
+      }
+      &__right{
+        height: 30px;
+        line-height: 30px;
+        font-size: 15px;
+      }
+    }
+    &__box2{
+      display: flex;
+      width: 100%;
+      overflow: scroll;
+      border-bottom: 0.8px solid rgba(94, 94, 94, 0.445);
+      &__images{
+        padding: 10px;
+        &--image{
+          padding-bottom: 5px;
+        }
+        &--mod{
+          display: flex;
+          &--edit{
+            margin-right: 10px;
+            margin-bottom: 25px;
+          }
+          &--delete{
+            margin-bottom: 25px;
+          }
+        }
+      }
+    }
+  }
+  // ==================== ④ブログ ====================
+  &__blogs{
     width: auto;
     height: 400px;
     margin: 25px 0;

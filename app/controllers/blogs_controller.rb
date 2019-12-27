@@ -1,12 +1,12 @@
 class BlogsController < ApplicationController
 
   def index
-    @blogs = blog.includes(:user)
+    @blogs = Blog.includes(:user)
   end
 
   def new
     @user = User.find(current_user.id)
-    @blog = blog.new
+    @blog = Blog.new
   end
 
   def create
@@ -19,11 +19,11 @@ class BlogsController < ApplicationController
   end
 
   def edit
-    @blog = blog.find(params[:id])
+    @blog = Blog.find(params[:id])
   end
 
   def update
-    @blog = blogimage.find(params[:id])
+    @blog = Blog.find(params[:id])
     if @blog.update(blogs_params)
       redirect_to user_path(current_user)
     else
@@ -32,7 +32,7 @@ class BlogsController < ApplicationController
   end
 
   def destroy
-    blog = blog.find(params[:id])
+    blog = Blog.find(params[:id])
     blog.destroy
     redirect_to user_path(current_user)
   end

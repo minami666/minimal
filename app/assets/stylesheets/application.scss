@@ -15,7 +15,11 @@
 
 // モノの写真
 @import 'items/new';
-@import 'roomimages/edit';
+@import 'items/edit';
+
+// ブログ
+@import 'blogs/new';
+@import 'blogs/edit';
 
 .wrapper{
   min-height: 100vh;

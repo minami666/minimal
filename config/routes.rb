@@ -14,4 +14,7 @@ Rails.application.routes.draw do
 # ================ モノの写真 ================
   resources :items
 
+# ================ ブログ ================
+resources :blogs
+
 end

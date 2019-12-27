@@ -1,0 +1,14 @@
+= render "partial/header"
+
+.blogs__new
+  .blogs__new__form
+    = form_for(@blog,url: blogs_path,method: :post) do |r|
+      .blogs__new__form__image
+        = r.file_field :image
+        %br/
+      .blogs__new__form__text
+        = r.text_field :text,placeholder: "入力しよう"
+      .blogs__new__form__submit
+        = r.submit "ブログを投稿する"
+
+= render "partial/footer"

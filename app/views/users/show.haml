@@ -58,7 +58,7 @@
       - else
         %p 投稿はまだありません
 
-  -# ==================== ②モノの画像 ====================
+  -# ==================== ③モノの画像 ====================
   .users__show__items
     .users__show__items__box1
       .users__show__items__box1__left
@@ -84,6 +84,33 @@
                 = link_to "削除",item_path(i.id),method: :delete
       - else
         %p 投稿はまだない
+
+  -# ==================== ③ブログ ====================
+  .users__show__blogs
+    .users__show__blogs__box1
+      .users__show__blogs__box1__left
+        .users__show__blogs__box1__left--title
+          = "#{@user.nickname}さんのブログ"
+        .users__show__blogs__box1__left--more
+          = link_to "もっと見る",new_blog_path
+      .users__show__blogs__box1__right
+        = link_to "ブログを投稿する",new_blog_path
+
+      -# ==================== ブログ投稿フォーム ====================
+    .users__show__blogs__box2
+      -# ==================== ブログ表示 ====================
+      - if @user.blogs.present?
+        - @user.blogs.last(10).each_with_index do |b|
+          .users__show__blogs__box2__images
+            .users__show__blogs__box2__images--image
+              = image_tag b.image.url
+            .users__show__blogs__box2__images--mod
+              .users__show__blogs__box2__images--mod--edit
+                = link_to "編集",edit_blog_path(b.id)
+              .users__show__blogs__box2__images--mod--delete
+                = link_to "削除",blog_path(b.id),method: :delete
+      - else
+        %p ブログ投稿はまだない
 
 
   .users__show__kakeibo
