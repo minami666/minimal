@@ -1,30 +1,50 @@
 = render "partial/header"
 
 .users__show
+  -# ==================== プロフィール ====================
   .users__show__profile
-    .users__show__profile--title
-      = "#{@user.nickname}さんのプロフィール"
-      %br/
-      = link_to "プロフィールを編集する",edit_user_registration_path
-    .users__show__profile
-      .users__show__profile__left
-        = image_tag @user.image.url
+    .users__show__profile__box1
+      .users__show__profile__box1--title
+        = "#{@user.nickname}さんのプロフィール"
+        %br/
+      .users__show__profile__box1--edit_profile
+        = link_to "プロフィールを編集する",edit_user_registration_path
+
+    -# ==================== プロフィール画像 ====================
+
+    .users__show__profileimage
+      - if @user.image.url.present?
+        .users__show__profile__left
+          = image_tag @user.image.url
+      - else
+        %p プロフィール画像はありません
+
       .users__show__profile__right
+
+        -# ==================== プロフィール文章 ====================
         .users__show__profile__right--profile
           = @user.profile
+
+          -# ==================== フォロー＆フォロワー ====================
         .users__show__profile__right__low
           .users__show__profile__right__low--follow
           .users__show__profile__right__low--follower
+
+    -# ==================== 部屋の画像 ====================
 
   .users__show__roomimages
     .users__show__roomimages--text
       .users__show__roomimages--text--title
         = "#{@user.nickname}さんの部屋"
-        %br/
+
+      -# ==================== 部屋の画像の投稿フォーム ====================
+
       .users__show__roomimages--title--post
         = link_to "部屋の写真を投稿する",new_roomimage_path
     .users__show__roomimages--images
-      %br/
+
+      -# ==================== 部屋の画像の表示 ====================
+
       - if @user.roomimages.present?
         - @user.roomimages.last(3).each do |r|
           .users__show__roomimages--images--box
@@ -34,6 +54,8 @@
               = link_to "部屋の写真を削除",roomimage_path,method: :delete
       - else
         %p 投稿はまだありません
+
+    -# ==================== モノの画像 ====================
 
   .users__show__goods
 
