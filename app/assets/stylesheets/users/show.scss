@@ -1,32 +1,51 @@
-.users__show__roomimages{
-  width: auto;
-  height: 1000px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  &--text{
-    width: auto;
-    margin: 30px 0px;
-    font-size: 30px;
-    opacity: 0.5;
+.users__show{
+  padding-top: 100px;
+  &__profile{
+    margin-top: 30px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     &--title{
-
-    }
-    &--post{
-
+      font-size: 30px;
+      opacity: 0.5;
     }
   }
-  &--images{
-    width: auto;
-    display: flex;
-    align-items: center;
-    .roomimage{
 
+  &__roomimages{
+    width: auto;
+    height: 1000px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &--text{
+      width: auto;
+      margin: 30px 0px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      &--title{
+        font-size: 30px;
+        opacity: 0.5;
+      }
+    }
+    &--images{
+      width: auto;
+      display: flex;
+      padding: 15px;
+      &--box{
+        display: flex;
+        flex-direction: column;
+        &--i{
+          padding: 15px;
+          margin: 0 auto;
+        }
+        &--d{
+          margin: 0 auto;
+        }
+      }
     }
   }
 }

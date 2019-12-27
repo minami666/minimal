@@ -15,6 +15,11 @@ class RoomimagesController < ApplicationController
     end
   end
 
+  def destroy
+    @roomimage = Roomimage.find_by(user_id: current_user.id)
+    @roomimage.destroy
+  end
+
   private
     def roomimages_params
       params.require(:roomimage).permit(:image,:text).merge(user_id: current_user.id)

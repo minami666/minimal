@@ -1,28 +1,43 @@
 = render "partial/header"
-.users__show__roomimages
-  .users__show__roomimages--text
-    .users__show__roomimages--text--title
-      = "#{@user.nickname}さんの部屋"
+
+.users__show
+  .users__show__profile
+    .users__show__profile--title
+      = "#{@user.nickname}さんのプロフィール"
       %br/
-    .users__show__roomimages--title--post
-      = link_to "投稿する",new_roomimage_path
-  .users__show__roomimages--images
-    %br/
-    - if @user.roomimages.present?
-      - @user.roomimages.each do |r|
-        = image_tag r.image.url
-      - if current_user
-        = link_to "削除",roomimage_path,method: :delete
-    - else
-      %p 投稿はまだありません
+      = link_to "プロフィールを編集する",edit_user_registration_path
+    .users__show__profile
+      .users__show__profile__left
+        = image_tag @user.image.url
+      .users__show__profile__right
+        .users__show__profile__right--profile
+          = @user.profile
+        .users__show__profile__right__low
+          .users__show__profile__right__low--follow
+          .users__show__profile__right__low--follower
+
+  .users__show__roomimages
+    .users__show__roomimages--text
+      .users__show__roomimages--text--title
+        = "#{@user.nickname}さんの部屋"
+        %br/
+      .users__show__roomimages--title--post
+        = link_to "部屋の写真を投稿する",new_roomimage_path
+    .users__show__roomimages--images
+      %br/
+      - if @user.roomimages.present?
+        - @user.roomimages.last(3).each do |r|
+          .users__show__roomimages--images--box
+            .users__show__roomimages--images--box--i
+              = image_tag r.image.url
+            .users__show__roomimages--images--box--d
+              = link_to "部屋の写真を削除",roomimage_path,method: :delete
+      - else
+        %p 投稿はまだありません
 
   .users__show__goods
-    -# = "#{@user.nickname}さんの"
-    -# %br/
-    -# - if @user.roomimages.present?
-    -#   - @user.roomimages.each do |r|
-    -#     = image_tag r.image.url
-    -# - else
-    -#   %p 投稿はまだありません
+
+
+  .users__show__kakeibo
 
 = render "partial/footer"
