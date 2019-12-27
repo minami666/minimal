@@ -8,7 +8,7 @@
       - if @user.image.url.present?
         = image_tag @user.image.url,class: "profileimage"
       - else
-        = image_tag @user.image.url ##デフォルト画像
+        デフォルト画像
 
     .users__show__profile__box2
       .users__show__profile__box2__1
@@ -50,11 +50,13 @@
           .users__show__roomimages__box2__images
             .users__show__roomimages__box2__images--image
               = image_tag r.image.url
+              = link_to "#{r.title}",root_path,class: "blogtitle"
             .users__show__roomimages__box2__images--mod
               .users__show__roomimages__box2__images--mod--edit
                 = link_to "編集",edit_roomimage_path(r.id)
               .users__show__roomimages__box2__images--mod--delete
                 = link_to "削除",roomimage_path(r.id),method: :delete
+
       - else
         %p 投稿はまだありません
 
@@ -85,7 +87,7 @@
       - else
         %p 投稿はまだない
 
-  -# ==================== ③ブログ ====================
+  -# ==================== ④ブログ ====================
   .users__show__blogs
     .users__show__blogs__box1
       .users__show__blogs__box1__left
@@ -104,6 +106,8 @@
           .users__show__blogs__box2__images
             .users__show__blogs__box2__images--image
               = image_tag b.image.url
+              .users__show__blogs__box2__images--image--title
+                = b.title
             .users__show__blogs__box2__images--mod
               .users__show__blogs__box2__images--mod--edit
                 = link_to "編集",edit_blog_path(b.id)

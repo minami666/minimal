@@ -43,6 +43,8 @@
             text-decoration: none;
           }
           :hover{
+            transition:0.3s;
+            cursor: pointer;
             color: red;
           }
         }
@@ -61,34 +63,38 @@
         display: flex;
         justify-content: space-around;
         &--follow{
+          color: blue;
           padding-left: 20px;
           margin-right: 25px;
           display: flex;
           a{
             text-decoration: none;
           }
+          :hover:not(.right){
+            transition:0.3s;
+            cursor: pointer;
+            color: red;
+          }
           .left{
-            color: blue;
             margin-right: 10px;
-            :hover{
-              cursor: pointer;
-            }
           }
           .right{
             opacity: 0.8;
           }
         }
         &--follower{
+          color: blue;
           display: flex;
           a{
             text-decoration: none;
           }
+          :hover:not(.right){
+            transition:0.3s;
+            cursor: pointer;
+            color: red;
+          }
           .left{
-            color: blue;
             margin-right: 10px;
-            :hover{
-              cursor: pointer;
-            }
           }
           .right{
             opacity: 0.8;
@@ -123,13 +129,28 @@
         &--more{
           height: 30px;
           line-height: 30px;
-          font-size: px;
+          a{
+            text-decoration: none;
+          }
+          :hover{
+            transition:0.3s;
+            cursor: pointer;
+            color: red;
+          }
         }
       }
       &__right{
         height: 30px;
         line-height: 30px;
         font-size: 15px;
+        a{
+          text-decoration: none;
+        }
+        :hover{
+          transition:0.3s;
+          cursor: pointer;
+          color: red;
+        }
       }
     }
     &__box2{
@@ -148,9 +169,25 @@
           &--edit{
             margin-right: 10px;
             margin-bottom: 25px;
+            a{
+              text-decoration: none;
+            }
+            :hover{
+              transition:0.3s;
+              cursor: pointer;
+              color: red;
+            }
           }
           &--delete{
             margin-bottom: 25px;
+            a{
+              text-decoration: none;
+            }
+            :hover{
+              transition:0.3s;
+              cursor: pointer;
+              color: red;
+            }
           }
         }
       }
@@ -181,13 +218,28 @@
         &--more{
           height: 30px;
           line-height: 30px;
-          font-size: px;
+          a{
+            text-decoration: none;
+          }
+          :hover{
+            transition:0.3s;
+            cursor: pointer;
+            color: red;
+          }
         }
       }
       &__right{
         height: 30px;
         line-height: 30px;
         font-size: 15px;
+        a{
+          text-decoration: none;
+        }
+        :hover{
+          transition:0.3s;
+          cursor: pointer;
+          color: red;
+        }
       }
     }
     &__box2{
@@ -205,9 +257,25 @@
           &--edit{
             margin-right: 10px;
             margin-bottom: 25px;
+            a{
+              text-decoration: none;
+            }
+            :hover{
+              transition:0.3s;
+              cursor: pointer;
+              color: red;
+            }
           }
           &--delete{
             margin-bottom: 25px;
+            a{
+              text-decoration: none;
+            }
+            :hover{
+              transition:0.3s;
+              cursor: pointer;
+              color: red;
+            }
           }
         }
       }
@@ -238,13 +306,28 @@
         &--more{
           height: 30px;
           line-height: 30px;
-          font-size: px;
+          a{
+            text-decoration: none;
+          }
+          :hover{
+            transition:0.3s;
+            cursor: pointer;
+            color: red;
+          }
         }
       }
       &__right{
         height: 30px;
         line-height: 30px;
         font-size: 15px;
+        a{
+          text-decoration: none;
+        }
+        :hover{
+          transition:0.3s;
+          cursor: pointer;
+          color: red;
+        }
       }
     }
     &__box2{
@@ -256,15 +339,43 @@
         padding: 10px;
         &--image{
           padding-bottom: 5px;
+          filter: brightness(50%);
+          position: relative;
+          &--title{
+            position: absolute;
+            color: white;
+            font-size: 30px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+          }
         }
         &--mod{
           display: flex;
           &--edit{
             margin-right: 10px;
             margin-bottom: 25px;
+            a{
+              text-decoration: none;
+            }
+            :hover{
+              transition:0.3s;
+              cursor: pointer;
+              color: red;
+            }
           }
           &--delete{
             margin-bottom: 25px;
+            a{
+              text-decoration: none;
+            }
+            :hover{
+              transition:0.3s;
+              cursor: pointer;
+              color: red;
+            }
           }
         }
       }

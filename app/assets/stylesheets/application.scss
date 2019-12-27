@@ -12,14 +12,20 @@
 // 部屋の写真
 @import 'roomimages/new';
 @import 'roomimages/edit';
+@import 'roomimages/show';
+@import 'roomimages/index';
 
 // モノの写真
 @import 'items/new';
 @import 'items/edit';
+@import 'items/show';
+@import 'items/index';
 
 // ブログ
 @import 'blogs/new';
 @import 'blogs/edit';
+@import 'blogs/show';
+@import 'blogs/index';
 
 .wrapper{
   min-height: 100vh;

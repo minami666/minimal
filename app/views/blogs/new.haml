@@ -3,12 +3,13 @@
 .blogs__new
   .blogs__new__form
     = form_for(@blog,url: blogs_path,method: :post) do |r|
-      .blogs__new__form__image
-        = r.file_field :image
-        %br/
-      .blogs__new__form__text
-        = r.text_field :text,placeholder: "入力しよう"
-      .blogs__new__form__submit
-        = r.submit "ブログを投稿する"
+      .blogs__new__form__titleform
+        = r.text_field :title,placeholder: "タイトル",class: "title"
+      .blogs__new__form__imageform
+        = r.file_field :image,class: "image"
+      .blogs__new__form__textform
+        = r.text_area :text,placeholder: "本文",class: "text"
+      .blogs__new__form__submitform
+        = r.submit "投稿",class: "submit"
 
 = render "partial/footer"

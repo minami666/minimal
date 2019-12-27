@@ -4,5 +4,4 @@ class Blog < ApplicationRecord
   belongs_to :user
 
   validates :text, length: { in: 1..400 }
-  validates :image, length: { maximum: 1 }
 end
