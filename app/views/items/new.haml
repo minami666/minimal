@@ -1,0 +1,14 @@
+= render "partial/header"
+
+.items__new
+  .items__new__form
+    = form_for(@item,url: items_path,method: :post) do |r|
+      .items__new__form__image
+        = r.file_field :image
+        %br/
+      .items__new__form__text
+        = r.text_field :text,placeholder: "入力しよう"
+      .items__new__form__submit
+        = r.submit "投稿する"
+
+= render "partial/footer"

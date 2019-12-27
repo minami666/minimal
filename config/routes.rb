@@ -11,4 +11,7 @@ Rails.application.routes.draw do
 # ================ 部屋の写真 ================
   resources :roomimages
 
+# ================ モノの写真 ================
+  resources :items
+
 end
