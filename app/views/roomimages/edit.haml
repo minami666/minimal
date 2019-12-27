@@ -1,0 +1,22 @@
+= render "partial/header"
+
+.roomimages__edit
+  .roomimages__edit__1
+    .roomimages__edit__1__image
+      = image_tag @room.image.url
+    .roomimages__edit__1__text
+      - if @room.text.present?
+        =  "#{@room.text}"
+      - else
+        %p コメントはありません
+
+  .roomimages__edit__2__form
+    = form_for(@room,url: roomimage_path,method: :patch) do |r|
+      .roomimages__edit__2__form__image
+        = r.file_field :image
+      .roomimages__edit__2__form__text
+        = r.text_area :text,placeholder: "入力しよう"
+      .roomimages__edit__2__form__submit
+        = r.submit "投稿する"
+
+= render "partial/footer"

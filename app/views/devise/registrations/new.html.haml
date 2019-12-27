@@ -1,10 +1,21 @@
-%h2 Sign up
-= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+%h2 新規登録
+%br/
+
+= form_for(resource, as: resource_name, url: user_registration_path) do |f|
   = render "devise/shared/error_messages", resource: resource
+  -# ======================== ニックネーム ========================
+  .field
+    = f.label "ニックネーム"
+    %br/
+    = f.text_field :nickname, autofocus: true
+
+  -# ======================== メアド ========================
   .field
     = f.label :email
     %br/
     = f.email_field :email, autofocus: true, autocomplete: "email"
+
+  -# ======================== パスワード ========================
   .field
     = f.label :password
     - if @minimum_password_length
@@ -12,10 +23,22 @@
         (#{@minimum_password_length} characters minimum)
     %br/
     = f.password_field :password, autocomplete: "new-password"
+
+  -# ======================== パスワード確認 ========================
   .field
     = f.label :password_confirmation
     %br/
     = f.password_field :password_confirmation, autocomplete: "new-password"
+
+  -# ======================== プロフィール画像 ========================
+  .field
+    = f.label "プロフィール画像"
+    %br/
+    = f.file_field :image
+
+  -# ======================== 送信 ========================
+  %br/
   .actions
     = f.submit "Sign up"
+  %br/
 = render "devise/shared/links"

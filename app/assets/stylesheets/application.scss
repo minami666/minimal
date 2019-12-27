@@ -1,13 +1,18 @@
-/* リセットCSSなど */
-// Custom bootstrap variables must be set or imported *before* bootstrap.
+/* 全ページ共通の要素 */
 @import "bootstrap";
 @import "reset";
 @import "font-awesome";
-
-/* 全ページ共通の要素 */
 @import 'partial/header';
 @import 'partial/footer';
 @import 'homes/index';
+
+// ユーザー関連
+@import 'users/show';
+
+// 部屋の写真
+@import 'roomimages/new';
+@import 'roomimages/edit';
+
 
 .wrapper{
   min-height: 100vh;

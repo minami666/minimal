@@ -1,6 +1,7 @@
 class HomesController < ApplicationController
 
-def index
-end
+  def index
+    @rooms = Roomimage.all
+  end
 
 end

@@ -1,7 +1,18 @@
-%h2
-  Edit #{resource_name.to_s.humanize}
 = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
   = render "devise/shared/error_messages", resource: resource
+  -# ============ ニックネーム ============
+  .field
+    = f.label :nickname
+    %br/
+    = f.text_field :nickname
+
+  -# ============ プロフィール画像 ============
+  .field
+    = f.label "プロフィール画像"
+    %br/
+    = f.file_field :image
+
+  -# ============ メアド ============
   .field
     = f.label :email
     %br/
@@ -9,6 +20,9 @@
   - if devise_mapping.confirmable? && resource.pending_reconfirmation?
     %div
       Currently waiting confirmation for: #{resource.unconfirmed_email}
+
+  -# ============ パスワード ============
+
   .field
     = f.label :password
     %i (leave blank if you don't want to change it)
@@ -19,6 +33,9 @@
       %em
         = @minimum_password_length
         characters minimum
+
+  -# ============ パスワード確認 ============
+
   .field
     = f.label :password_confirmation
     %br/
@@ -28,9 +45,15 @@
     %i (we need your current password to confirm your changes)
     %br/
     = f.password_field :current_password, autocomplete: "current-password"
+
+  -# ============ 更新ボタン ============
+
   .actions
     = f.submit "Update"
 %h3 Cancel my account
 %p
+
+  -# ============ 削除ボタン ============
+
   Unhappy? #{button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete}
 = link_to "Back", :back

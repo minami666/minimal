@@ -1,13 +1,69 @@
 = render "partial/header"
 
-.users__show__roomimages
-  = "#{@user.nickname}さんの部屋"
-  - if @user.roomimages.present?
-    - @user.roomimages.each do |r|
-      = image_tag r.image.url
-  - else
-    %p 投稿はまだありません
+.users__show
+  -# ==================== プロフィール ====================
+  .users__show__profile
+    .users__show__profile__box1
+      -# ==================== プロフィール画像 ====================
+      - if @user.image.url.present?
+        = image_tag @user.image.url,class: "profileimage"
+      - else
+        = image_tag @user.image.url ##デフォルト画像
 
-  = link_to "投稿する",new_roomimage_path
+    .users__show__profile__box2
+      .users__show__profile__box2__1
+        .users__show__profile__box2__1--title
+          = "#{@user.nickname}さんのプロフィール"
+        .users__show__profile__box2__1--edit_link
+          = link_to "編集",edit_user_registration_path
+
+      -# ==================== プロフィール文章 ====================
+      .users__show__profile__box2__2
+        .users__show__profile__box2__2--profiletext
+          = @user.profile
+
+      -# ==================== フォロー＆フォロワー ====================
+      .users__show__profile__box2__3--followbox
+        .users__show__profile__box2__3--followbox--follow
+          = link_to "follow",root_path,class: "left"
+          %p.right 10
+        .users__show__profile__box2__3--followbox--follower
+          = link_to "follower",root_path,class: "left"
+          %p.right 15
+
+  -# ==================== 部屋の画像 ====================
+
+  .users__show__roomimages
+    .users__show__roomimages__box1
+      .users__show__roomimages__box1__left
+        .users__show__roomimages__box1__left--title
+          = "#{@user.nickname}さんの部屋"
+        .users__show__roomimages__box1__left--more
+          = link_to "もっと見る",new_roomimage_path
+      .users__show__roomimages__box1__right
+        = link_to "部屋の写真を投稿する",new_roomimage_path
+
+      -# ==================== 部屋の画像の投稿フォーム ====================
+    .users__show__roomimages__box2
+      -# ==================== 部屋の画像の表示 ====================
+      - if @user.roomimages.present?
+        - @user.roomimages.last(10).each_with_index do |r|
+          .users__show__roomimages__box2__images
+            .users__show__roomimages__box2__images--image
+              = image_tag r.image.url
+            .users__show__roomimages__box2__images--mod
+              .users__show__roomimages__box2__images--mod--edit
+                = link_to "編集",edit_roomimage_path(r.id)
+              .users__show__roomimages__box2__images--mod--delete
+                = link_to "削除",roomimage_path(r.id),method: :delete
+      - else
+        %p 投稿はまだありません
+
+    -# ==================== モノの画像 ====================
+
+  .users__show__goods
+
+
+  .users__show__kakeibo
 
 = render "partial/footer"
