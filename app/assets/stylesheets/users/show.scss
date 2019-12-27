@@ -1,49 +1,154 @@
 .users__show{
-  padding-top: 100px;
+  width: 1500px;
+  margin: 0 auto;
+// ==================== プロフィール ====================
+  padding: 100px 50px 0;
   &__profile{
-    margin-top: 30px;
+    margin: 0 auto;
+    padding-bottom: 25px;
+    border-bottom: 0.8px solid rgba(94, 94, 94, 0.445);
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    &--title{
-      font-size: 30px;
-      opacity: 0.5;
+    // プロフィール：左：画像
+    &__box1{
+      margin-right: 20px;
+      .profileimage{
+        border-radius: 50%;
+      }
+    }
+    // プロフィール：右
+    &__box2{
+      width: 500px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      // 右：上
+      &__1{
+        height: 30px;
+        display: flex;
+        justify-content: space-between;
+        // テキスト
+        &--title{
+          height: 30px;
+          font-size: 20px;
+          margin-right: 50px;
+          opacity: 0.5;
+        }
+        // 編集リンク
+        &--edit_link{
+          height: 30px;
+          line-height: 30px;
+          margin-right: 150px;
+          a{
+            text-decoration: none;
+          }
+          :hover{
+            color: red;
+          }
+        }
+      }
+        // プロフィール文章
+      &__2{
+        &--profiletext{
+
+        }
+      }
+      &__3--followbox{
+        width: auto;
+        border: 0.5px solid rgba(94, 94, 94, 0.445);
+        font-size: 20px;
+        display: flex;
+        justify-content: space-around;
+        &--follow{
+          padding-left: 20px;
+          margin-right: 25px;
+          display: flex;
+          a{
+            text-decoration: none;
+          }
+          .left{
+            color: blue;
+            margin-right: 10px;
+            :hover{
+              cursor: pointer;
+            }
+          }
+          .right{
+            opacity: 0.8;
+          }
+        }
+        &--follower{
+          display: flex;
+          a{
+            text-decoration: none;
+          }
+          .left{
+            color: blue;
+            margin-right: 10px;
+            :hover{
+              cursor: pointer;
+            }
+          }
+          .right{
+            opacity: 0.8;
+            padding-right: 20px;
+          }
+        }
+      }
     }
   }
-
+// ==================== 部屋の画像 ====================
   &__roomimages{
     width: auto;
     height: 1000px;
+    margin: 25px 0;
     display: flex;
     flex-direction: column;
-    align-items: center;
-
-    &--text{
-      width: auto;
-      margin: 30px 0px;
+    &__box1{
+      margin-bottom: 10px;
+      height: 30px;
+      width: 100%;
       display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      &--title{
-        font-size: 30px;
-        opacity: 0.5;
+      justify-content: space-between;
+      &__left{
+        display: flex;
+        &--title{
+          height: 30px;
+          line-height: 30px;
+          font-size: 20px;
+          margin-right: 50px;
+          opacity: 0.5;
+        }
+        &--more{
+          height: 30px;
+          line-height: 30px;
+          font-size: px;
+        }
+      }
+      &__right{
+        height: 30px;
+        line-height: 30px;
+        font-size: 15px;
       }
     }
-    &--images{
-      width: auto;
+    &__box2{
       display: flex;
-      padding: 15px;
-      &--box{
-        display: flex;
-        flex-direction: column;
-        &--i{
-          padding: 15px;
-          margin: 0 auto;
+      width: 100%;
+      overflow: scroll;
+      border-bottom: 0.8px solid rgba(94, 94, 94, 0.445);
+      &__images{
+        padding: 10px;
+        &--image{
+          padding-bottom: 5px;
         }
-        &--d{
-          margin: 0 auto;
+        &--mod{
+          display: flex;
+          &--edit{
+            margin-right: 10px;
+            margin-bottom: 25px;
+          }
+          &--delete{
+            margin-bottom: 25px;
+          }
         }
       }
     }
