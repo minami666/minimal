@@ -9,7 +9,9 @@ Rails.application.routes.draw do
   resources :users,only: [:index,:show]
 
 # ================ 部屋の写真 ================
-  resources :roomimages
+  resources :roomimages do
+    resources :roomlikes, only: [:create, :destroy]
+  end
 
 # ================ モノの写真 ================
   resources :items
