@@ -1,0 +1,2 @@
+class Roomlike < ApplicationRecord
+end
