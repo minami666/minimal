@@ -1,7 +1,13 @@
 class RoomimagesController < ApplicationController
+  before_action :authenticate_user!, only: [:new,:create,:edit,:update,:destroy]
 
   def index
-    @rooms = Roomimage.includes(:user)
+    @rooms = Roomimage.all
+    @room = Roomimage.new
+  end
+
+  def show
+    @room = Roomimage.find(params[:id])
   end
 
   def new

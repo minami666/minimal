@@ -1,0 +1,10 @@
+= render "partial/header"
+
+.roomimages_show
+  .roomimages_show__title
+  %p 投稿詳細ページ
+
+  .roomimages_show__image
+    = image_tag @room.image.url
+
+= render "partial/footer"

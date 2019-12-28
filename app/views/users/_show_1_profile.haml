@@ -1,0 +1,29 @@
+-# ==================== ①プロフィール ====================
+.users__show__profile
+  .users__show__profile__box1
+    -# ==================== プロフィール画像 ====================
+    - if @user.image.url.present?
+      = image_tag @user.image.url,class: "profileimage"
+    - else
+      デフォルト画像
+
+  .users__show__profile__box2
+    .users__show__profile__box2__1
+      .users__show__profile__box2__1--title
+        = "#{@user.nickname}さんのプロフィール"
+      .users__show__profile__box2__1--edit_link
+        = link_to "編集",edit_user_registration_path
+
+    -# ==================== プロフィール文章 ====================
+    .users__show__profile__box2__2
+      .users__show__profile__box2__2--profiletext
+        = @user.profile
+
+    -# ==================== フォロー＆フォロワー ====================
+    .users__show__profile__box2__3--followbox
+      .users__show__profile__box2__3--followbox--follow
+        = link_to "follow",root_path,class: "left"
+        %p.right 10
+      .users__show__profile__box2__3--followbox--follower
+        = link_to "follower",root_path,class: "left"
+        %p.right 15
