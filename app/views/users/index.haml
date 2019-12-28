@@ -1,0 +1,11 @@
+= render "partial/header"
+
+.users_index
+  .users_index__box1
+    .users_index__box1__title
+      %p ユーザーの一覧
+    .users_index__box1__each
+      - @users.each do |u|
+        = link_to "#{u.nickname}さん",user_path(u.id)
+
+= render "partial/footer"
