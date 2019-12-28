@@ -10,6 +10,9 @@ class User < ApplicationRecord
   has_many :roomimages,dependent: :destroy
   has_many :roomlikes, dependent: :destroy
   has_many :liked_roomimages, through: :roomlikes, source: :roomimage
+  def already_liked?(roomimage)
+    self.roomlikes.exists?(roomimage_id: roomimage.id)
+  end
 
   # ============ モノ ============
   has_many :items,dependent: :destroy
