@@ -1,0 +1,42 @@
+.blogs__new{
+  margin: 0 auto;
+  padding-top: 100px;
+  height: 1500px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  &__form{
+    &__titleform{
+      .title{
+        margin-bottom: 10px;
+        height: 60px;
+        width: 500px;
+      }
+    }
+    &__textform{
+      .text{
+      margin-bottom: 30px;
+      height: 500px;
+      width: 500px;
+      }
+    }
+    &__imageform{
+      display: flex;
+      justify-content: center;
+      .image{
+        height: 50px;
+        width: 150px;
+      }
+    }
+    &__submitform{
+      display: flex;
+      justify-content: center;
+      .submit{
+        height: 70px;
+        width: 250px;
+        padding: 20px ;
+        border-radius: 5px;
+      }
+    }
+  }
+}

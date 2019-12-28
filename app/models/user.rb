@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_many :roomimages,dependent: :destroy
   has_many :items,dependent: :destroy
+  has_many :blogs,dependent: :destroy
 
   def update_without_current_password(params, *options)
     params.delete(:current_password)
