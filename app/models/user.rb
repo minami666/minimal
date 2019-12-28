@@ -2,12 +2,23 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,:recoverable, :rememberable, :validatable
+
+  # ============ 画像のアップロード ============
   mount_uploader :image, ImageUploader
 
+  # ============ 部屋 ============
   has_many :roomimages,dependent: :destroy
+  has_many :roomlikes, dependent: :destroy
+  has_many :liked_roomimages, through: :roomlikes, source: :roomimage
+
+  # ============ モノ ============
   has_many :items,dependent: :destroy
+
+  # ============ ブログ ============
   has_many :blogs,dependent: :destroy
 
+
+  # ============ 現在のパスワードの入力なしでユーザー情報を更新できる設定 ============
   def update_without_current_password(params, *options)
     params.delete(:current_password)
 
