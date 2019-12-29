@@ -9,6 +9,7 @@ class RoomimagesController < ApplicationController
   def show
     @room = Roomimage.find(params[:id])
     @roomlike = Roomlike.new
+    @user = @room.user
   end
 
   def new

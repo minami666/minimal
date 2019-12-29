@@ -1,7 +1,7 @@
 class RoomlikesController < ApplicationController
 
   def create
-    @roomlike = current_user.roomlikes.create(post_id: params[:post_id])
+    @roomlike = current_user.roomlikes.create(roomimage_id: params[:roomimage_id])
     redirect_to root_path
   end
 
