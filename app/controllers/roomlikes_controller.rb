@@ -6,7 +6,7 @@ class RoomlikesController < ApplicationController
   end
 
   def destroy
-    @roomlike = Roomlike.find_by(roomimages_id: params[:roomimages_id], user_id: current_user.id)
+    @roomlike = Roomlike.find_by(roomimage_id: params[:roomimage_id], user_id: current_user.id)
     @roomlike.destroy
     redirect_to root_path
   end
