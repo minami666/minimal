@@ -6,10 +6,12 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
 # ================ ユーザー ================
-  resources :users
+  resources :users,only: [:index,:show]
 
 # ================ 部屋の写真 ================
-  resources :roomimages
+  resources :roomimages do
+    resources :roomlikes, only: [:create, :destroy]
+  end
 
 # ================ モノの写真 ================
   resources :items
