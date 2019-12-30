@@ -2,5 +2,110 @@
   width: 1500px;
   height: 2000px;
   margin: 0 auto;
-  padding: 100px 20px 0;
+  padding: 100px 300px 0;
+
+  &__rooms{
+    padding: 30px 0;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    &__titlebox{
+      height: 30px;
+      font-size: 20px;
+      margin-right: 50px;
+      opacity: 0.5;
+      display: flex;
+      display: flex;
+      &--index{
+        padding-right: 30px;
+      }
+    }
+    &__boxes{
+      padding-top: 30px;
+      display: flex;
+      &__box{
+        position: relative;
+        transition: 0.3s;
+        padding-right: 10px;
+        a{
+          position: absolute;
+          display: block;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          text-indent:100%;
+          white-space:nowrap;
+          overflow:hidden;
+        }
+        &__image{
+          .indexradius{
+            border-radius: 10%;
+          }
+        }
+        &__names{
+          position: absolute;
+          font-size: 20px;
+          top: 260px;
+          left: 18px;
+          color: white;
+          opacity: 0.9;
+        }
+        &:hover{
+          opacity: 0.7;
+          color:none;
+        }
+      }
+    }
+  }
+
+  &__users{
+    padding: 30px 0;
+    border-bottom: 1px solid #000;
+    &__titlebox{
+      height: 30px;
+      font-size: 20px;
+      margin-right: 50px;
+      opacity: 0.5;
+      display: flex;
+      &--index{
+        padding-right: 30px;
+      }
+    }
+    &__boxes{
+      padding-top: 30px;
+      display: flex;
+      &__box{
+        position: relative;
+        transition: 0.3s;
+        padding-right: 10px;
+        a{
+          position: absolute;
+          display: block;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          text-indent:100%;
+          white-space:nowrap;
+          overflow:hidden;
+        }
+        &__images{
+          .indexradius{
+            border-radius: 10%;
+          }
+        }
+        &__names{
+          position: absolute;
+          font-size: 18px;
+          top: 120px;
+          left: 9px;
+          color: #fff;
+          opacity: 0.8;
+        }
+        &:hover{
+          opacity: 0.7;
+        }
+      }
+    }
+  }
 }

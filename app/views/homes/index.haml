@@ -1,8 +1,35 @@
 = render "partial/header"
 
 .homes__index
-  %p 人気の写真
-  - @rooms.last(10).each do |r|
-    = image_tag r.image.url
+
+  .homes__index__rooms
+    .homes__index__rooms__titlebox
+      .homes__index__rooms__titlebox--index
+        %p 人気の部屋
+      .homes__index__rooms__titlebox--more
+        = link_to "もっと見る",roomimages_path
+    .homes__index__rooms__boxes
+      - @rooms.last(10).each do |r|
+        .homes__index__rooms__boxes__box
+          = link_to roomimage_path(r)
+          .homes__index__rooms__boxes__box__image
+            = image_tag r.image.url,size: "300x300",class: "indexradius"
+          .homes__index__rooms__boxes__box__names
+            = r.user.nickname
+
+  .homes__index__users
+    .homes__index__users__titlebox
+      .homes__index__users__titlebox--index
+        %p 人気のユーザー
+      .homes__index__users__titlebox--more
+        = link_to "もっと見る",users_path
+    .homes__index__users__boxes
+      - @users.last(10).each do |u|
+        .homes__index__users__boxes__box
+          .homes__index__users__boxes__box__images
+            = link_to "#{u.nickname}",user_path(u)
+            = image_tag u.image.url,size: "150x150",class: "indexradius"
+          .homes__index__users__boxes__box__names
+            = "#{u.nickname}"
 
 = render "partial/footer"
