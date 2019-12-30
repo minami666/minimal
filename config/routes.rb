@@ -8,6 +8,9 @@ Rails.application.routes.draw do
 # ================ ユーザー ================
   resources :users,only: [:index,:show]
 
+# ================ フォロー ================
+  resources :relationships, only: [:create, :destroy]
+
 # ================ 部屋の写真 ================
   resources :roomimages do
     resources :roomlikes, only: [:create, :destroy]

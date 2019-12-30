@@ -11,9 +11,14 @@
     display: flex;
     // プロフィール：左：画像
     &__box1{
-      margin-right: 20px;
-      .profileimage{
-        border-radius: 50%;
+      &__image{
+        margin-right: 20px;
+        .profileimage{
+          border-radius: 50%;
+        }
+      }
+      &__follow{
+
       }
     }
     // プロフィール：右
