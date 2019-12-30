@@ -1,11 +1,14 @@
 -# ==================== ①プロフィール ====================
 .users__show__profile
   .users__show__profile__box1
-    -# ==================== プロフィール画像 ====================
-    - if @user.image.url.present?
-      = image_tag @user.image.url,class: "profileimage"
-    - else
-      デフォルト画像
+    .users__show__profile__box1__image
+      -# ==================== プロフィール画像 ====================
+      - if @user.image.url.present?
+        = image_tag @user.image.url,class: "profileimage"
+      - else
+        デフォルト画像
+    .users__show__profile__box1__follow
+      = render "relationships/follow_button",user: @user
 
   .users__show__profile__box2
     .users__show__profile__box2__1
