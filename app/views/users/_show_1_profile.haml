@@ -4,7 +4,7 @@
     .users__show__profile__box1__image
       -# ==================== プロフィール画像 ====================
       - if @user.image.url.present?
-        = image_tag @user.image.url,class: "profileimage"
+        = image_tag @user.image.url,class: "profileimage",size: "300x300"
       - else
         デフォルト画像
     .users__show__profile__box1__follow
@@ -15,7 +15,8 @@
       .users__show__profile__box2__1--title
         = "#{@user.nickname}さんのプロフィール"
       .users__show__profile__box2__1--edit_link
-        = link_to "編集",edit_user_registration_path
+        - if current_user.id == @user.id
+          = link_to "編集",edit_user_registration_path
 
     -# ==================== プロフィール文章 ====================
     .users__show__profile__box2__2
