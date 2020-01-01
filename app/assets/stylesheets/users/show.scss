@@ -167,7 +167,9 @@
       &__images{
         padding: 10px;
         &--image{
-          padding-bottom: 5px;
+          .roomimage{
+            border-radius: 10%;
+          }
         }
         &--mod{
           display: flex;
@@ -256,6 +258,9 @@
         padding: 10px;
         &--image{
           padding-bottom: 5px;
+          .itemimage{
+            border-radius: 10%;
+          }
         }
         &--mod{
           display: flex;
@@ -344,6 +349,9 @@
         padding: 10px;
         &--image{
           padding-bottom: 5px;
+          .blogimage{
+            border-radius: 10%;
+          }
           filter: brightness(50%);
           position: relative;
           &--title{

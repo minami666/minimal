@@ -16,7 +16,7 @@
       - @user.blogs.last(10).each_with_index do |b|
         .users__show__blogs__box2__images
           .users__show__blogs__box2__images--image
-            = image_tag b.image.url
+            = image_tag b.image.url,class: "blogimage",size: "300x300"
             .users__show__blogs__box2__images--image--title
               = b.title
           .users__show__blogs__box2__images--mod

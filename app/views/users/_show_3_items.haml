@@ -16,7 +16,7 @@
       - @user.items.last(10).each_with_index do |i|
         .users__show__items__box2__images
           .users__show__items__box2__images--image
-            = image_tag i.image.url
+            = image_tag i.image.url,class: "itemimage",size: "300x300"
           .users__show__items__box2__images--mod
             .users__show__items__box2__images--mod--edit
               = link_to "編集",edit_item_path(i.id)
