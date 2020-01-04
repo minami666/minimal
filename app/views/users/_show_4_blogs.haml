@@ -6,8 +6,9 @@
         = "#{@user.nickname}さんのブログ"
       .users__show__blogs__box1__left--more
         = link_to "もっと見る",new_blog_path
-    .users__show__blogs__box1__right
-      = link_to "ブログを投稿する",new_blog_path
+    - if user_signed_in? && current_user.id == @user.id
+      .users__show__blogs__box1__right
+        = link_to "ブログを投稿する",new_blog_path
 
     -# ==================== ブログ投稿フォーム ====================
   .users__show__blogs__box2

@@ -6,8 +6,9 @@
         = "#{@user.nickname}さんのモノ"
       .users__show__items__box1__left--more
         = link_to "もっと見る",new_item_path
-    .users__show__items__box1__right
-      = link_to "モノの写真を投稿する",new_item_path
+    - if user_signed_in? && current_user.id == @user.id
+      .users__show__items__box1__right
+        = link_to "モノの写真を投稿する",new_item_path
 
     -# ==================== モノの画像の投稿フォーム ====================
   .users__show__items__box2
