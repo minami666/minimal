@@ -18,11 +18,12 @@
         .users__show__roomimages__box2__images
           .users__show__roomimages__box2__images--image
             = image_tag r.image.url,class: "roomimage",size: "300x300"
-          .users__show__roomimages__box2__images--mod
-            .users__show__roomimages__box2__images--mod--edit
-              = link_to "編集",edit_roomimage_path(r.id)
-            .users__show__roomimages__box2__images--mod--delete
-              = link_to "削除",roomimage_path(r.id),method: :delete
+          - if user_signed_in? && current_user.id == @user.id
+            .users__show__roomimages__box2__images--mod
+              .users__show__roomimages__box2__images--mod--edit
+                = link_to "編集",edit_roomimage_path(r.id)
+              .users__show__roomimages__box2__images--mod--delete
+                = link_to "削除",roomimage_path(r.id),method: :delete
 
     - else
       %p 投稿はまだありません

@@ -18,10 +18,11 @@
         .users__show__items__box2__images
           .users__show__items__box2__images--image
             = image_tag i.image.url,class: "itemimage",size: "300x300"
-          .users__show__items__box2__images--mod
-            .users__show__items__box2__images--mod--edit
-              = link_to "編集",edit_item_path(i.id)
-            .users__show__items__box2__images--mod--delete
-              = link_to "削除",item_path(i.id),method: :delete
+          - if user_signed_in? && current_user.id == @user.id
+            .users__show__items__box2__images--mod
+              .users__show__items__box2__images--mod--edit
+                = link_to "編集",edit_item_path(i.id)
+              .users__show__items__box2__images--mod--delete
+                = link_to "削除",item_path(i.id),method: :delete
     - else
       %p 投稿はまだない
