@@ -1,11 +1,12 @@
 .header
   .header__box
     .header__box__1
-      = link_to "MINIMA",root_path
+      = link_to "SNS",root_path
     .header__box__2
-      .header__box__2__input-group
-        %input.search-input{class: "search",name: "q", placeholder: "検索", type: "text", value: params[:q], style: "width: 200px; height:30px;"}
-        %button.btn.btn-info{alt: "検索", value: "検索", type: "button"}
+      %input.search-input{class: "header__box__2__form",name: "q", placeholder: "検索", type: "text", value: params[:q], style: "width: 200px; height:30px;"}
+      .header__box__2__button
+      = link_to root_path do
+        %i.fa.fa-cog.serachicon
     .header__box__3
       - if user_signed_in?
         .header__box__3--mypage
