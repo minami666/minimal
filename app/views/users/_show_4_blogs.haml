@@ -5,9 +5,10 @@
       .users__show__blogs__box1__left--title
         = "#{@user.nickname}さんのブログ"
       .users__show__blogs__box1__left--more
-        = link_to "もっと見る",new_blog_path
-    .users__show__blogs__box1__right
-      = link_to "ブログを投稿する",new_blog_path
+        = link_to "もっと見る",blogs_path
+    - if user_signed_in? && current_user.id == @user.id
+      .users__show__blogs__box1__right
+        = link_to "ブログを投稿する",new_blog_path
 
     -# ==================== ブログ投稿フォーム ====================
   .users__show__blogs__box2
@@ -16,13 +17,14 @@
       - @user.blogs.last(10).each_with_index do |b|
         .users__show__blogs__box2__images
           .users__show__blogs__box2__images--image
-            = image_tag b.image.url
+            = image_tag b.image.url,class: "blogimage",size: "300x300"
             .users__show__blogs__box2__images--image--title
               = b.title
-          .users__show__blogs__box2__images--mod
-            .users__show__blogs__box2__images--mod--edit
-              = link_to "編集",edit_blog_path(b.id)
-            .users__show__blogs__box2__images--mod--delete
-              = link_to "削除",blog_path(b.id),method: :delete
+          - if user_signed_in? && current_user.id == @user.id
+            .users__show__blogs__box2__images--mod
+              .users__show__blogs__box2__images--mod--edit
+                = link_to "編集",edit_blog_path(b.id)
+              .users__show__blogs__box2__images--mod--delete
+                = link_to "削除",blog_path(b.id),method: :delete
     - else
       %p ブログ投稿はまだない

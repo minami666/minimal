@@ -1,5 +1,5 @@
 class RoomimagesController < ApplicationController
-  before_action :authenticate_user!, only: [:new,:create,:edit,:update,:destroy]
+  before_action :authenticate_user!, except: [:index]
 
   def index
     @rooms = Roomimage.all

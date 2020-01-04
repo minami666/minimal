@@ -2,7 +2,8 @@
 
 .roomimages_show
   .roomimages_show__title
-    = "#{@user.nickname}さんの部屋"
+    = link_to "#{@user.nickname}さん",user_path(@user)
+    の部屋
   .roomimages_show__userinfo
 
   .roomimages_show__image
@@ -13,10 +14,11 @@
     %span いいね数
 
   .roomimages_show__likedelete
-    - if current_user.already_liked?(@room)
-      = button_to 'いいねを取り消す', roomimage_roomlike_path(@room), method: :delete
-    -  else
-      = button_to 'いいね', roomimage_roomlikes_path(@room)
+    - if user_signed_in?
+      - if current_user.already_liked?(@room)
+        = button_to 'いいねを取り消す', roomimage_roomlike_path(@room), method: :delete,remote: true
+      -  else
+        = button_to 'いいね', roomimage_roomlikes_path(@room),remote: true
 
   .roomimages_show__likeduser
     %p stared by

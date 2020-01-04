@@ -9,7 +9,7 @@
       .homes__index__rooms__titlebox--more
         = link_to "もっと見る",roomimages_path
     .homes__index__rooms__boxes
-      - @rooms.last(10).each do |r|
+      - @rooms.last(3).each do |r|
         .homes__index__rooms__boxes__box
           .homes__index__rooms__boxes__box__image
             = link_to "#{r.user.nickname}",roomimage_path(r)
@@ -27,7 +27,7 @@
       .homes__index__users__titlebox--more
         = link_to "もっと見る",users_path
     .homes__index__users__boxes
-      - @users.last(10).each do |u|
+      - @users.last(5).each do |u|
         .homes__index__users__boxes__box
           .homes__index__users__boxes__box__images
             = link_to "#{u.nickname}",user_path(u)

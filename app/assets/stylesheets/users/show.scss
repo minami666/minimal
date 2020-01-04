@@ -1,5 +1,5 @@
 .users__show{
-  width: 1500px;
+  width: 1000px;
   height: 2000px;
   margin: 0 auto;
   padding: 100px 20px 0;
@@ -167,7 +167,9 @@
       &__images{
         padding: 10px;
         &--image{
-          padding-bottom: 5px;
+          .roomimage{
+            border-radius: 10%;
+          }
         }
         &--mod{
           display: flex;
@@ -256,6 +258,9 @@
         padding: 10px;
         &--image{
           padding-bottom: 5px;
+          .itemimage{
+            border-radius: 10%;
+          }
         }
         &--mod{
           display: flex;
@@ -344,6 +349,9 @@
         padding: 10px;
         &--image{
           padding-bottom: 5px;
+          .blogimage{
+            border-radius: 10%;
+          }
           filter: brightness(50%);
           position: relative;
           &--title{

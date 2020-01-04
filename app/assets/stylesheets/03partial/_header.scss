@@ -15,22 +15,23 @@
     justify-content: space-between;
     align-items: center;
     &__1{
-      background-color: blue;
       margin-left: 100px;
+      a{
+        text-decoration: none;
+        color: black;
+      }
     }
 
     &__2{
-    }
-
-    &__input-group{
       display: flex;
-    }
-
-    .search{
-      width: 300px;
-      margin-left: 30px;
-      margin-right: 20px;
-      border-radius: 5px;
+      .search-input{
+        position: relative;
+      }
+      .serachicon{
+        position: relative;
+        top: 5px;
+        right: 23px;
+      }
     }
 
     &__3{

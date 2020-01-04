@@ -2,9 +2,12 @@
 @import "bootstrap";
 @import "reset";
 @import "font-awesome";
-@import 'partial/header';
-@import 'partial/footer';
+@import '03partial/header';
+@import '03partial/footer';
 @import 'homes/index';
+
+// mixin
+@import '02mixin/wholepages';
 
 // ユーザー関連
 @import 'users/show';
