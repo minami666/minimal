@@ -28,7 +28,9 @@
     .users__show__profile__box2__3--followbox
       .users__show__profile__box2__3--followbox--follow
         = link_to "follow",root_path,class: "left"
-        %p.right 10
+        %p.right
+          = "#{@follows}"
       .users__show__profile__box2__3--followbox--follower
         = link_to "follower",root_path,class: "left"
-        %p.right 15
+        %p.right
+          = "#{@followers}"

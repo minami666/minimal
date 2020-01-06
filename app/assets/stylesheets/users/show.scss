@@ -1,28 +1,27 @@
 .users__show{
-  width: 1000px;
-  height: 2000px;
-  margin: 0 auto;
-  padding: 100px 20px 0;
+  @include wholebox;
 // ==================== ①プロフィール ====================
   &__profile{
     margin: 0 auto;
     padding-bottom: 25px;
-    border-bottom: 0.8px solid rgba(94, 94, 94, 0.445);
+    border-bottom: 0.8px solid $heading;
     display: flex;
     // プロフィール：左：画像
     &__box1{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       &__image{
-        margin-right: 20px;
         .profileimage{
           border-radius: 50%;
         }
       }
       &__follow{
-
       }
     }
     // プロフィール：右
     &__box2{
+      margin-left: 20px;
       width: 500px;
       display: flex;
       flex-direction: column;
@@ -44,14 +43,7 @@
           height: 30px;
           line-height: 30px;
           margin-right: 150px;
-          a{
-            text-decoration: none;
-          }
-          :hover{
-            transition:0.3s;
-            cursor: pointer;
-            color: red;
-          }
+          @include link;
         }
       }
         // プロフィール文章
@@ -62,24 +54,17 @@
       }
       &__3--followbox{
         width: auto;
-        border: 1px solid rgb(26, 144, 255);
+        border: 1px solid $link_button;
         border-radius: 10px;
         font-size: 20px;
         display: flex;
         justify-content: space-around;
         &--follow{
-          color: blue;
+          color: $link_button;
           padding-left: 20px;
           margin-right: 25px;
           display: flex;
-          a{
-            text-decoration: none;
-          }
-          :hover:not(.right){
-            transition:0.3s;
-            cursor: pointer;
-            color: red;
-          }
+          @include link;
           .left{
             margin-right: 10px;
           }
@@ -88,16 +73,9 @@
           }
         }
         &--follower{
-          color: blue;
+          color: $link_button;
           display: flex;
-          a{
-            text-decoration: none;
-          }
-          :hover:not(.right){
-            transition:0.3s;
-            cursor: pointer;
-            color: red;
-          }
+          @include link;
           .left{
             margin-right: 10px;
           }
@@ -111,285 +89,31 @@
   }
 // ==================== ②部屋 ====================
   &__roomimages{
-    width: auto;
-    height: 400px;
-    margin: 25px 0;
-    display: flex;
-    flex-direction: column;
-    &__box1{
-      margin-bottom: 10px;
-      height: 30px;
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      &__left{
-        display: flex;
-        &--title{
-          height: 30px;
-          line-height: 30px;
-          font-size: 20px;
-          margin-right: 50px;
-          opacity: 0.5;
-        }
-        &--more{
-          height: 30px;
-          line-height: 30px;
-          a{
-            text-decoration: none;
-          }
-          :hover{
-            transition:0.3s;
-            cursor: pointer;
-            color: red;
-          }
-        }
-      }
-      &__right{
-        height: 30px;
-        line-height: 30px;
-        font-size: 15px;
-        a{
-          text-decoration: none;
-        }
-        :hover{
-          transition:0.3s;
-          cursor: pointer;
-          color: red;
-        }
-      }
-    }
-    &__box2{
-      display: flex;
-      height: 380px;
-      width: 100%;
-      overflow: scroll;
-      border-bottom: 0.8px solid rgba(94, 94, 94, 0.445);
-      &__images{
-        padding: 10px;
-        &--image{
-          .roomimage{
-            border-radius: 10%;
-          }
-        }
-        &--mod{
-          display: flex;
-          &--edit{
-            margin-right: 10px;
-            margin-bottom: 25px;
-            a{
-              text-decoration: none;
-            }
-            :hover{
-              transition:0.3s;
-              cursor: pointer;
-              color: red;
-            }
-          }
-          &--delete{
-            margin-bottom: 25px;
-            a{
-              text-decoration: none;
-            }
-            :hover{
-              transition:0.3s;
-              cursor: pointer;
-              color: red;
-            }
-          }
-        }
-      }
-    }
+    @include user_show_box;
   }
 // ==================== ③モノ ====================
   &__items{
-    width: auto;
-    height: 400px;
-    margin: 25px 0;
-    display: flex;
-    flex-direction: column;
-    &__box1{
-      margin-bottom: 10px;
-      height: 30px;
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      &__left{
-        display: flex;
-        &--title{
-          height: 30px;
-          line-height: 30px;
-          font-size: 20px;
-          margin-right: 50px;
-          opacity: 0.5;
-        }
-        &--more{
-          height: 30px;
-          line-height: 30px;
-          a{
-            text-decoration: none;
-          }
-          :hover{
-            transition:0.3s;
-            cursor: pointer;
-            color: red;
-          }
-        }
-      }
-      &__right{
-        height: 30px;
-        line-height: 30px;
-        font-size: 15px;
-        a{
-          text-decoration: none;
-        }
-        :hover{
-          transition:0.3s;
-          cursor: pointer;
-          color: red;
-        }
-      }
-    }
-    &__box2{
-      display: flex;
-      width: 100%;
-      overflow: scroll;
-      border-bottom: 0.8px solid rgba(94, 94, 94, 0.445);
-      &__images{
-        padding: 10px;
-        &--image{
-          padding-bottom: 5px;
-          .itemimage{
-            border-radius: 10%;
-          }
-        }
-        &--mod{
-          display: flex;
-          &--edit{
-            margin-right: 10px;
-            margin-bottom: 25px;
-            a{
-              text-decoration: none;
-            }
-            :hover{
-              transition:0.3s;
-              cursor: pointer;
-              color: red;
-            }
-          }
-          &--delete{
-            margin-bottom: 25px;
-            a{
-              text-decoration: none;
-            }
-            :hover{
-              transition:0.3s;
-              cursor: pointer;
-              color: red;
-            }
-          }
-        }
-      }
-    }
+    @include user_show_box;
   }
   // ==================== ④ブログ ====================
   &__blogs{
-    width: auto;
-    height: 400px;
-    margin: 25px 0;
-    display: flex;
-    flex-direction: column;
-    &__box1{
-      margin-bottom: 10px;
-      height: 30px;
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      &__left{
-        display: flex;
-        &--title{
-          height: 30px;
-          line-height: 30px;
-          font-size: 20px;
-          margin-right: 50px;
-          opacity: 0.5;
-        }
-        &--more{
-          height: 30px;
-          line-height: 30px;
-          a{
-            text-decoration: none;
-          }
-          :hover{
-            transition:0.3s;
-            cursor: pointer;
-            color: red;
-          }
-        }
-      }
-      &__right{
-        height: 30px;
-        line-height: 30px;
-        font-size: 15px;
+    @include user_show_box;
+    .users__show__blogs__box2__images--image{
+      position: relative;
+      transition: 0.2s;
+      &--title{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        color: white;
+        font-size: 30px;
+        display: block;
         a{
           text-decoration: none;
-        }
-        :hover{
-          transition:0.3s;
-          cursor: pointer;
-          color: red;
-        }
-      }
-    }
-    &__box2{
-      display: flex;
-      width: 100%;
-      overflow: scroll;
-      border-bottom: 0.8px solid rgba(94, 94, 94, 0.445);
-      &__images{
-        padding: 10px;
-        &--image{
-          padding-bottom: 5px;
-          .blogimage{
-            border-radius: 10%;
-          }
-          filter: brightness(50%);
-          position: relative;
-          &--title{
-            position: absolute;
-            color: white;
-            font-size: 30px;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            -webkit-transform: translate(-50%, -50%);
-            -ms-transform: translate(-50%, -50%);
-          }
-        }
-        &--mod{
-          display: flex;
-          &--edit{
-            margin-right: 10px;
-            margin-bottom: 25px;
-            a{
-              text-decoration: none;
-            }
-            :hover{
-              transition:0.3s;
-              cursor: pointer;
-              color: red;
-            }
-          }
-          &--delete{
-            margin-bottom: 25px;
-            a{
-              text-decoration: none;
-            }
-            :hover{
-              transition:0.3s;
-              cursor: pointer;
-              color: red;
-            }
-          }
+          color: white;
         }
       }
     }

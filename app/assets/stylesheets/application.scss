@@ -1,22 +1,33 @@
-/* 全ページ共通の要素 */
+/* 共通の要素 */
 @import "bootstrap";
 @import "reset";
 @import "font-awesome";
-@import '03partial/header';
-@import '03partial/footer';
+@import 'wholepages_mixin';
+
+// 変数
+@import '01var/colours';
+
+// ヘッダとフッタ
+@import '02partial/header';
+@import '02partial/footer';
+
+// ホームページ
+@import 'homes/index_mixin';
 @import 'homes/index';
 
-// mixin
-@import '02mixin/wholepages';
-
 // ユーザー関連
+@import 'users/show_mixin';
 @import 'users/show';
 
+// フォロー／フォロワー
+@import 'relationships/follow_button';
+
 // 部屋の写真
+@import 'roomimages/index';
 @import 'roomimages/new';
 @import 'roomimages/edit';
 @import 'roomimages/show';
-@import 'roomimages/index';
+@import 'roomimages/showindex';
 
 // モノの写真
 @import 'items/new';

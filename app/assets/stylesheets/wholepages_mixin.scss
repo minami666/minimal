@@ -1,0 +1,19 @@
+// 共通のレイアウト
+@mixin wholebox{
+  width: 1000px;
+  height: 2000px;
+  margin: 0 auto;
+  padding: 100px 0 0;
+}
+
+// リンクのエフェクト
+@mixin link{
+  a{
+    text-decoration: none;
+  }
+  :hover{
+    transition:0.3s;
+    cursor: pointer;
+    color: $linkhover;
+  }
+}

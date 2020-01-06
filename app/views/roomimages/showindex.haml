@@ -1,0 +1,7 @@
+= render "partial/header"
+
+.roomimages__showindex
+  - @rooms.each do |r|
+    = image_tag r.image.url,size: "100x100"
+
+= render "partial/footer"

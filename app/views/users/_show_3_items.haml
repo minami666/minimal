@@ -14,10 +14,10 @@
   .users__show__items__box2
     -# ==================== モノの画像の表示 ====================
     - if @user.items.present?
-      - @user.items.last(10).each_with_index do |i|
+      - @user.items.last(5).each_with_index do |i|
         .users__show__items__box2__images
           .users__show__items__box2__images--image
-            = image_tag i.image.url,class: "itemimage",size: "300x300"
+            = link_to image_tag(i.image.url,class: "image",size: "300x300"),item_path(i)
           - if user_signed_in? && current_user.id == @user.id
             .users__show__items__box2__images--mod
               .users__show__items__box2__images--mod--edit

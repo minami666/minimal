@@ -2,7 +2,12 @@ class RoomimagesController < ApplicationController
   before_action :authenticate_user!, except: [:index]
 
   def index
-    @rooms = Roomimage.all
+    @rooms = Roomimage.all.order(created_at: :DESC)
+  end
+
+  def showindex
+    @user = User.find(params[:id])
+    @rooms = @user.roomimages.all
     @room = Roomimage.new
   end
 

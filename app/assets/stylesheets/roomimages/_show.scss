@@ -1,8 +1,5 @@
 .roomimages_show{
-  width: 1500px;
-  height: 2000px;
-  margin: 0 auto;
-  padding: 100px 200px 0;
+  @include wholebox;
   &__likeduser{
     &__image{
       border-radius: 50%;
