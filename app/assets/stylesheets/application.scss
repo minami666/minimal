@@ -18,6 +18,9 @@
 @import 'users/show_mixin';
 @import 'users/show';
 
+// フォロー／フォロワー
+@import 'relationships/follow_button';
+
 // 部屋の写真
 @import 'roomimages/new';
 @import 'roomimages/edit';
