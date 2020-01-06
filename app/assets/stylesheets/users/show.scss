@@ -4,7 +4,7 @@
   &__profile{
     margin: 0 auto;
     padding-bottom: 25px;
-    border-bottom: 0.8px solid rgba(94, 94, 94, 0.445);
+    border-bottom: 0.8px solid $heading;
     display: flex;
     // プロフィール：左：画像
     &__box1{
@@ -52,13 +52,13 @@
       }
       &__3--followbox{
         width: auto;
-        border: 1px solid rgb(26, 144, 255);
+        border: 1px solid $link_button;
         border-radius: 10px;
         font-size: 20px;
         display: flex;
         justify-content: space-around;
         &--follow{
-          color: blue;
+          color: $link_button;
           padding-left: 20px;
           margin-right: 25px;
           display: flex;
@@ -71,7 +71,7 @@
           }
         }
         &--follower{
-          color: blue;
+          color: $link_button;
           display: flex;
           @include link;
           .left{
@@ -87,203 +87,14 @@
   }
 // ==================== ②部屋 ====================
   &__roomimages{
-    width: auto;
-    height: 400px;
-    margin: 25px 0;
-    display: flex;
-    flex-direction: column;
-    &__box1{
-      margin-bottom: 10px;
-      height: 30px;
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      &__left{
-        display: flex;
-        &--title{
-          height: 30px;
-          line-height: 30px;
-          font-size: 20px;
-          margin-right: 50px;
-          opacity: 0.5;
-        }
-        &--more{
-          height: 30px;
-          line-height: 30px;
-          @include link;
-        }
-      }
-      &__right{
-        height: 30px;
-        line-height: 30px;
-        font-size: 15px;
-        @include link;
-      }
-    }
-    &__box2{
-      display: flex;
-      height: 380px;
-      width: 100%;
-      overflow: scroll;
-      border-bottom: 0.8px solid rgba(94, 94, 94, 0.445);
-      &__images{
-        padding: 10px;
-        &--image{
-          .roomimage{
-            border-radius: 10%;
-          }
-        }
-        &--mod{
-          display: flex;
-          &--edit{
-            margin-right: 10px;
-            margin-bottom: 25px;
-            @include link;
-          }
-          &--delete{
-            margin-bottom: 25px;
-            @include link;
-          }
-        }
-      }
-    }
+    @include user_show_box;
   }
 // ==================== ③モノ ====================
   &__items{
-    width: auto;
-    height: 400px;
-    margin: 25px 0;
-    display: flex;
-    flex-direction: column;
-    &__box1{
-      margin-bottom: 10px;
-      height: 30px;
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      &__left{
-        display: flex;
-        &--title{
-          height: 30px;
-          line-height: 30px;
-          font-size: 20px;
-          margin-right: 50px;
-          opacity: 0.5;
-        }
-        &--more{
-          height: 30px;
-          line-height: 30px;
-          @include link;
-        }
-      }
-      &__right{
-        height: 30px;
-        line-height: 30px;
-        font-size: 15px;
-        @include link;
-      }
-    }
-    &__box2{
-      display: flex;
-      width: 100%;
-      overflow: scroll;
-      border-bottom: 0.8px solid rgba(94, 94, 94, 0.445);
-      &__images{
-        padding: 10px;
-        &--image{
-          padding-bottom: 5px;
-          .itemimage{
-            border-radius: 10%;
-          }
-        }
-        &--mod{
-          display: flex;
-          &--edit{
-            margin-right: 10px;
-            margin-bottom: 25px;
-            @include link;
-          }
-          &--delete{
-            margin-bottom: 25px;
-            @include link;
-          }
-        }
-      }
-    }
+    @include user_show_box;
   }
   // ==================== ④ブログ ====================
   &__blogs{
-    width: auto;
-    height: 400px;
-    margin: 25px 0;
-    display: flex;
-    flex-direction: column;
-    &__box1{
-      margin-bottom: 10px;
-      height: 30px;
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      &__left{
-        display: flex;
-        &--title{
-          height: 30px;
-          line-height: 30px;
-          font-size: 20px;
-          margin-right: 50px;
-          opacity: 0.5;
-        }
-        &--more{
-          height: 30px;
-          line-height: 30px;
-          @include link;
-        }
-      }
-      &__right{
-        height: 30px;
-        line-height: 30px;
-        font-size: 15px;
-        @include link;
-      }
-    }
-    &__box2{
-      display: flex;
-      width: 100%;
-      overflow: scroll;
-      border-bottom: 0.8px solid rgba(94, 94, 94, 0.445);
-      &__images{
-        padding: 10px;
-        &--image{
-          padding-bottom: 5px;
-          .blogimage{
-            border-radius: 10%;
-          }
-          filter: brightness(50%);
-          position: relative;
-          &--title{
-            position: absolute;
-            color: white;
-            font-size: 30px;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            -webkit-transform: translate(-50%, -50%);
-            -ms-transform: translate(-50%, -50%);
-          }
-        }
-        &--mod{
-          display: flex;
-          &--edit{
-            margin-right: 10px;
-            margin-bottom: 25px;
-            @include link;
-          }
-          &--delete{
-            margin-bottom: 25px;
-            @include link;
-          }
-        }
-      }
-    }
+    @include user_show_box;
   }
 }
