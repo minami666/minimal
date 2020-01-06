@@ -1,8 +1,5 @@
 .blogs__new{
-  margin: 0 auto;
-  padding-top: 100px;
-  height: 1500px;
-  width: 100%;
+  @include wholebox;
   display: flex;
   justify-content: center;
   &__form{

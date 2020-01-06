@@ -1,8 +1,5 @@
 .users__show{
-  width: 1000px;
-  height: 2000px;
-  margin: 0 auto;
-  padding: 100px 20px 0;
+  @include wholebox;
 // ==================== ①プロフィール ====================
   &__profile{
     margin: 0 auto;
@@ -44,14 +41,7 @@
           height: 30px;
           line-height: 30px;
           margin-right: 150px;
-          a{
-            text-decoration: none;
-          }
-          :hover{
-            transition:0.3s;
-            cursor: pointer;
-            color: red;
-          }
+          @include link;
         }
       }
         // プロフィール文章
@@ -72,14 +62,7 @@
           padding-left: 20px;
           margin-right: 25px;
           display: flex;
-          a{
-            text-decoration: none;
-          }
-          :hover:not(.right){
-            transition:0.3s;
-            cursor: pointer;
-            color: red;
-          }
+          @include link;
           .left{
             margin-right: 10px;
           }
@@ -90,14 +73,7 @@
         &--follower{
           color: blue;
           display: flex;
-          a{
-            text-decoration: none;
-          }
-          :hover:not(.right){
-            transition:0.3s;
-            cursor: pointer;
-            color: red;
-          }
+          @include link;
           .left{
             margin-right: 10px;
           }
@@ -134,28 +110,14 @@
         &--more{
           height: 30px;
           line-height: 30px;
-          a{
-            text-decoration: none;
-          }
-          :hover{
-            transition:0.3s;
-            cursor: pointer;
-            color: red;
-          }
+          @include link;
         }
       }
       &__right{
         height: 30px;
         line-height: 30px;
         font-size: 15px;
-        a{
-          text-decoration: none;
-        }
-        :hover{
-          transition:0.3s;
-          cursor: pointer;
-          color: red;
-        }
+        @include link;
       }
     }
     &__box2{
@@ -176,25 +138,11 @@
           &--edit{
             margin-right: 10px;
             margin-bottom: 25px;
-            a{
-              text-decoration: none;
-            }
-            :hover{
-              transition:0.3s;
-              cursor: pointer;
-              color: red;
-            }
+            @include link;
           }
           &--delete{
             margin-bottom: 25px;
-            a{
-              text-decoration: none;
-            }
-            :hover{
-              transition:0.3s;
-              cursor: pointer;
-              color: red;
-            }
+            @include link;
           }
         }
       }
@@ -225,28 +173,14 @@
         &--more{
           height: 30px;
           line-height: 30px;
-          a{
-            text-decoration: none;
-          }
-          :hover{
-            transition:0.3s;
-            cursor: pointer;
-            color: red;
-          }
+          @include link;
         }
       }
       &__right{
         height: 30px;
         line-height: 30px;
         font-size: 15px;
-        a{
-          text-decoration: none;
-        }
-        :hover{
-          transition:0.3s;
-          cursor: pointer;
-          color: red;
-        }
+        @include link;
       }
     }
     &__box2{
@@ -267,25 +201,11 @@
           &--edit{
             margin-right: 10px;
             margin-bottom: 25px;
-            a{
-              text-decoration: none;
-            }
-            :hover{
-              transition:0.3s;
-              cursor: pointer;
-              color: red;
-            }
+            @include link;
           }
           &--delete{
             margin-bottom: 25px;
-            a{
-              text-decoration: none;
-            }
-            :hover{
-              transition:0.3s;
-              cursor: pointer;
-              color: red;
-            }
+            @include link;
           }
         }
       }
@@ -316,28 +236,14 @@
         &--more{
           height: 30px;
           line-height: 30px;
-          a{
-            text-decoration: none;
-          }
-          :hover{
-            transition:0.3s;
-            cursor: pointer;
-            color: red;
-          }
+          @include link;
         }
       }
       &__right{
         height: 30px;
         line-height: 30px;
         font-size: 15px;
-        a{
-          text-decoration: none;
-        }
-        :hover{
-          transition:0.3s;
-          cursor: pointer;
-          color: red;
-        }
+        @include link;
       }
     }
     &__box2{
@@ -370,25 +276,11 @@
           &--edit{
             margin-right: 10px;
             margin-bottom: 25px;
-            a{
-              text-decoration: none;
-            }
-            :hover{
-              transition:0.3s;
-              cursor: pointer;
-              color: red;
-            }
+            @include link;
           }
           &--delete{
             margin-bottom: 25px;
-            a{
-              text-decoration: none;
-            }
-            :hover{
-              transition:0.3s;
-              cursor: pointer;
-              color: red;
-            }
+            @include link;
           }
         }
       }

@@ -1,13 +1,21 @@
-/* 全ページ共通の要素 */
+/* 共通の要素 */
 @import "bootstrap";
 @import "reset";
 @import "font-awesome";
-@import '03partial/header';
-@import '03partial/footer';
-@import 'homes/index';
+
+// 変数
+@import '01var/colours';
 
 // mixin
 @import '02mixin/wholepages';
+
+// ヘッダとフッタ
+@import '03partial/header';
+@import '03partial/footer';
+
+// ホームページ
+@import 'homes/index';
+
 
 // ユーザー関連
 @import 'users/show';

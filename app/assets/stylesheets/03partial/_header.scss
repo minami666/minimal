@@ -41,29 +41,29 @@
       &--mypage{
         background-color: white;
         padding: 5px;
-        border: 1px solid rgb(26, 144, 255);
+        border: 1px solid $link_button;
         border-radius: 5px;
         margin-right: 20px;
         a{
           text-decoration: none;
-          color: rgb(26, 144, 255);
+          color: $link_button;
         }
       }
       &--logout{
         background-color: white;
         padding: 5px;
-        border: 1px solid rgb(26, 144, 255);
+        border: 1px solid $link_button;
         border-radius: 5px;
         a{
           text-decoration: none;
-          color: rgb(26, 144, 255);
+          color: $link_button;
         }
       }
       &--registration{
-        background-color: red;
+        background-color: $linkhover;
         color: white;
         padding: 5px;
-        border: 1px solid rgb(255, 0, 0);
+        border: 1px solid $linkhover;
         border-radius: 5px;
         margin-right: 20px;
         a{
@@ -74,11 +74,11 @@
       &--login{
         background-color: white;
         padding: 5px;
-        border: 1px solid rgb(26, 144, 255);
+        border: 1px solid $link_button;
         border-radius: 5px;
         a{
           text-decoration: none;
-          color: rgb(26, 144, 255);
+          color: $link_button;
         }
       }
     }
