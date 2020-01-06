@@ -17,7 +17,7 @@
       - @user.roomimages.last(10).each_with_index do |r|
         .users__show__roomimages__box2__images
           .users__show__roomimages__box2__images--image
-            = image_tag r.image.url,class: "roomimage",size: "300x300"
+            = link_to image_tag(r.image.url,class: "image",size: "300x300"),roomimage_path(r)
           - if user_signed_in? && current_user.id == @user.id
             .users__show__roomimages__box2__images--mod
               .users__show__roomimages__box2__images--mod--edit

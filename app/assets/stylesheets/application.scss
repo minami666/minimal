@@ -2,23 +2,20 @@
 @import "bootstrap";
 @import "reset";
 @import "font-awesome";
+@import 'wholepages_mixin';
 
 // 変数
 @import '01var/colours';
 
-// mixin
-@import '02mixin/wholepages';
-@import '02mixin/user_show';
-
 // ヘッダとフッタ
-@import '03partial/header';
-@import '03partial/footer';
+@import '02partial/header';
+@import '02partial/footer';
 
 // ホームページ
 @import 'homes/index';
 
-
 // ユーザー関連
+@import 'users/show_mixin';
 @import 'users/show';
 
 // 部屋の写真
