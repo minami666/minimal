@@ -1,11 +1,8 @@
 .roomimages_show{
   @include wholebox;
-
-  // タイトル
-  &__title{
-    margin-bottom: 10px;
+  &__topbox{
+    margin: 0 0 10px 10px;
   }
-
   &__room_detail{
     display: flex;
     &__left{
@@ -19,12 +16,29 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      &__likeduser{
-        &__image{
-          border-radius: 50%;
-          margin: 5px;
+      &__like{
+        &__counts{
+          &__image{
+            border-radius: 50%;
+            margin: 5px;
+          }
+        }
+        &__delete{
+
+        }
+        &__users{
+          &--title{
+            color: $heading;
+            margin-bottom: 10px;
+          }
+          &--userimage{
+
+          }
         }
       }
     }
+  }
+  &__back{
+    margin: 10px 0 10px 10px;
   }
 }
