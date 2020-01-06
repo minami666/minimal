@@ -5,7 +5,7 @@
       .users__show__roomimages__box1__left--title
         = "#{@user.nickname}さんの部屋"
       .users__show__roomimages__box1__left--more
-        = link_to "もっと見る",roomimages_path
+        = link_to "もっと見る","/roomimagesuser/#{@user.id}"
     - if user_signed_in? && current_user.id == @user.id
       .users__show__roomimages__box1__right
         = link_to "部屋の写真を投稿する",new_roomimage_path
