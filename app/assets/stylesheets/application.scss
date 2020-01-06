@@ -12,6 +12,7 @@
 @import '02partial/footer';
 
 // ホームページ
+@import 'homes/index_mixin';
 @import 'homes/index';
 
 // ユーザー関連
@@ -22,6 +23,7 @@
 @import 'relationships/follow_button';
 
 // 部屋の写真
+@import 'roomimages/index';
 @import 'roomimages/new';
 @import 'roomimages/edit';
 @import 'roomimages/show';

@@ -47,14 +47,21 @@
       }
       &--mod{
         display: flex;
+        margin-top: 8px;
         &--edit{
           margin-right: 10px;
           margin-bottom: 25px;
           @include link;
+          border: 1px solid $link_button;
+          border-radius: 5px;
+          padding: 5px;
         }
         &--delete{
           margin-bottom: 25px;
           @include link;
+          border: 1px solid $link_button;
+          border-radius: 5px;
+          padding: 5px;
         }
       }
     }
