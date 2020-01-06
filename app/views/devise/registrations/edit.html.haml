@@ -1,59 +1,73 @@
-= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  -# ============ ニックネーム ============
-  .field
-    = f.label :nickname
-    %br/
-    = f.text_field :nickname
+= render "partial/header"
 
-  -# ============ プロフィール画像 ============
-  .field
-    = f.label "プロフィール画像"
-    %br/
-    = f.file_field :image
+.registration_edit
+  = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+    = render "devise/shared/error_messages", resource: resource
 
-  -# ============ メアド ============
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  - if devise_mapping.confirmable? && resource.pending_reconfirmation?
-    %div
-      Currently waiting confirmation for: #{resource.unconfirmed_email}
+    -# ============ ニックネーム ============
 
-  -# ============ パスワード ============
+    .registration_edit__field
+      .registration_edit__field__title
+        = f.label "ニックネーム"
+      .registration_edit__field__column
+        = f.text_field :nickname
 
-  .field
-    = f.label :password
-    %i (leave blank if you don't want to change it)
-    %br/
-    = f.password_field :password, autocomplete: "new-password"
-    - if @minimum_password_length
-      %br/
-      %em
-        = @minimum_password_length
-        characters minimum
+    -# ============ プロフィール画像 ============
 
-  -# ============ パスワード確認 ============
+    .registration_edit__field
+      .registration_edit__field__title
+        = f.label "プロフィール画像"
+      .registration_edit__field__column
+        = f.file_field :image
 
-  .field
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "new-password"
-  .field
-    = f.label :current_password
-    %i (we need your current password to confirm your changes)
-    %br/
-    = f.password_field :current_password, autocomplete: "current-password"
+    -# ============ プロフィール文章 ============
 
-  -# ============ 更新ボタン ============
+    .registration_edit__field
+      .registration_edit__field__title
+        = f.label "プロフィール文章"
+      .registration_edit__field__column
+        = f.text_area :profile
 
-  .actions
-    = f.submit "Update"
-%h3 Cancel my account
-%p
+    -# ============ メアド ============
 
-  -# ============ 削除ボタン ============
+    .registration_edit__field
+      .registration_edit__field__title
+        = f.label "メールアドレス"
+      .registration_edit__field__column
+        = f.email_field :email, autofocus: true, autocomplete: "email"
+    - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+      %div
+        Currently waiting confirmation for: #{resource.unconfirmed_email}
 
-  Unhappy? #{button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete}
-= link_to "Back", :back
+    -# ============ パスワード ============
+
+    .registration_edit__field
+      .registration_edit__field__title
+        = f.label "パスワード(#{@minimum_password_length}文字以上で入力してください)"
+      .registration_edit__field__column
+        = f.password_field :password, autocomplete: "new-password"
+
+
+    -# ============ パスワード確認 ============
+
+    .registration_edit__field
+      .registration_edit__field__title
+        = f.label "パスワード確認"
+      .registration_edit__field__column
+        = f.password_field :password_confirmation, autocomplete: "new-password"
+
+    -# ============ 更新ボタン ============
+
+    .registration_edit__field
+      = f.submit "更新する"
+
+    -# ============ 削除ボタン ============
+  %h3
+    .registration_edit__field
+      #{button_to "退会する", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete}
+
+    -# ============ 戻るボタン ============
+    .registration_edit__field
+      = link_to "戻る", :back
+
+= render "partial/footer"

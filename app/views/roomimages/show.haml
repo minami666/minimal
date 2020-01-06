@@ -4,28 +4,32 @@
   .roomimages_show__title
     = link_to "#{@user.nickname}さん",user_path(@user)
     の部屋
-  .roomimages_show__userinfo
 
-  .roomimages_show__image
-    = image_tag @room.image.url,size: "1000x1000"
+  .roomimages_show__room_detail
+    .roomimages_show__room_detail__left
+      = image_tag @room.image.url,class: "roomshowradius",size: "600x600"
+    .roomimages_show__room_detail__right
+      .roomimages_show__room_detail__right__text
+        = @room.text
+      -# =============== いいね ===============
+      .roomimages_show__room_detail__right__good
+        .roomimages_show__likecounts
+          = @room.roomlikes.count
+          %span いいね数
 
-  .roomimages_show__likecounts
-    = @room.roomlikes.count
-    %span いいね数
+        .roomimages_show__likedelete
+          - if user_signed_in?
+            - if current_user.already_liked?(@room)
+              = button_to 'いいねを取り消す', roomimage_roomlike_path(@room), method: :delete,remote: true
+            -  else
+              = button_to 'いいね', roomimage_roomlikes_path(@room),remote: true
 
-  .roomimages_show__likedelete
-    - if user_signed_in?
-      - if current_user.already_liked?(@room)
-        = button_to 'いいねを取り消す', roomimage_roomlike_path(@room), method: :delete,remote: true
-      -  else
-        = button_to 'いいね', roomimage_roomlikes_path(@room),remote: true
+        .roomimages_show__likeduser
+          %p stared by
+          - @room.liked_users.each do |user|
+            = image_tag user.image.url,size: "40x40", class: "roomimages_show__likeduser__image"
 
-  .roomimages_show__likeduser
-    %p stared by
-    - @room.liked_users.each do |user|
-      = image_tag user.image.url,size: "40x40", class: "roomimages_show__likeduser__image"
-
-  .roomimages_show__home
-    = link_to "#{@user.nickname}さんの詳細ページへ戻る", user_path(@user)
+        .roomimages_show__home
+          = link_to "#{@user.nickname}さんの詳細ページへ戻る", user_path(@user)
 
 = render "partial/footer"

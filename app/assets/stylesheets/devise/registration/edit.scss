@@ -1,0 +1,13 @@
+.registration_edit{
+  @include wholebox;
+  &__field{
+    margin-top: 30px;
+    &__title{
+      color: $heading;
+
+    }
+    &__column{
+
+    }
+  }
+}

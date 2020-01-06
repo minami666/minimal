@@ -11,6 +11,10 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      a{
+        text-decoration: none;
+        color: $link_button;
+      }
       &__image{
         .profileimage{
           border-radius: 50%;
@@ -25,12 +29,13 @@
       width: 500px;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      // justify-content: space-between;
       // 右：上
       &__1{
         height: 30px;
         display: flex;
         justify-content: space-between;
+        border-bottom: 1px solid $heading;
         // テキスト
         &--title{
           height: 30px;
@@ -40,18 +45,17 @@
         }
         // 編集リンク
         &--edit_link{
-          height: 30px;
-          line-height: 30px;
-          margin-right: 150px;
-          @include link;
         }
       }
-        // プロフィール文章
+      // プロフィール文章
       &__2{
         &--profiletext{
-
+          color: rgb(34, 34, 41);
+          height: 300px;
+          padding: 10px;
         }
       }
+      // フォロー／フォロワー
       &__3--followbox{
         width: auto;
         border: 1px solid $link_button;
@@ -118,4 +122,11 @@
       }
     }
   }
+}
+
+.user_edit{
+  margin-top: 20px;
+  border: 1px solid $link_button;
+  border-radius: 5px;
+  padding: 10px 10px;
 }

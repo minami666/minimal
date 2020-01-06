@@ -15,6 +15,9 @@
 @import 'homes/index_mixin';
 @import 'homes/index';
 
+// deviseページ
+@import 'devise/registration/edit';
+
 // ユーザー関連
 @import 'users/show_mixin';
 @import 'users/show';

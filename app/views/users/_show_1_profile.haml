@@ -7,17 +7,16 @@
         = image_tag @user.image.url,class: "profileimage",size: "300x300"
       - else
         デフォルト画像
-    - if user_signed_in?
+    - if user_signed_in? && @user != current_user
       .users__show__profile__box1__follow
         = render "relationships/follow_button",user: @user
+    - if user_signed_in? && current_user.id == @user.id
+      = link_to "プロフィールの編集",edit_user_registration_path,class: "user_edit"
 
   .users__show__profile__box2
     .users__show__profile__box2__1
       .users__show__profile__box2__1--title
         = "#{@user.nickname}さんのプロフィール"
-      .users__show__profile__box2__1--edit_link
-        - if user_signed_in? && current_user.id == @user.id
-          = link_to "編集",edit_user_registration_path
 
     -# ==================== プロフィール文章 ====================
     .users__show__profile__box2__2
