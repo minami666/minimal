@@ -1,5 +1,6 @@
 .roomimages_show{
   @include wholebox;
+  z-index: 1;
   &__topbox{
     margin: 0 0 10px 10px;
   }
@@ -24,7 +25,6 @@
           }
         }
         &__delete{
-
         }
         &__users{
           &--title{
@@ -41,4 +41,23 @@
   &__back{
     margin: 10px 0 10px 10px;
   }
+}
+
+.wrapper__roomimages_modal{
+  opacity: 0.3;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  z-index: 10001;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  border-radius: 5px;
+}
+
+
+.room_modal{
+  opacity: 1;
 }
