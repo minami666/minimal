@@ -18,9 +18,9 @@
         .roomimages_show__room_detail__right__like__delete
           - if user_signed_in?
             - if current_user.already_liked?(@room)
-              = button_to 'いいねを取り消す', roomimage_roomlike_path(@room), method: :delete,remote: true
+              = button_to 'いいねを取り消す', roomimage_roomlike_path(@room), method: :delete,local: true
             -  else
-              = button_to 'いいね', roomimage_roomlikes_path(@room),remote: true
+              = button_to 'いいね', roomimage_roomlikes_path(@room),local: true
 
         .roomimages_show__room_detail__right__like__users
           .roomimages_show__room_detail__right__like__users--title
