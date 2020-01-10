@@ -60,20 +60,22 @@
   border-radius: 5px;
 }
 
-
 .room_modal{
   opacity: 1;
 }
 
 .likesbutton--delete{
+  font-size: 20px;
   color: white;
   background-color: $link_button;
   border-style: none;
+  border-radius: 5px;
   padding: 10px 5px;
   margin: 20px 0;
 }
 
 .likesbutton--do{
+  font-size: 20px;
   color:$link_button;
   border: 1px solid $link_button;
   border-radius: 5px;
