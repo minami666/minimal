@@ -17,6 +17,7 @@ Rails.application.routes.draw do
 # ================ 部屋の写真 ================
   resources :roomimages do
     resources :roomlikes, only: [:create, :destroy]
+    resources :comments, only: [:create, :destroy]
   end
 
   get 'roomimagesuser/:id',to: 'roomimages#showindex'
