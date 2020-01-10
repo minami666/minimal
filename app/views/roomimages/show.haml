@@ -30,6 +30,11 @@
             - @room.liked_users.last(10).each do |user|
               = image_tag user.image.url,size: "40x40", class: "roomimages_show__likeduser__image"
 
+  .roomimages_show__commentbox
+    .roomimages_show__commentbox__form
+      コメントフォーム
+    .roomimages_show__commentbox__comments
+
 = image_tag @room.image.url,class: "roomshowradius wrapper__roomimages_modal"
 
 = render "partial/footer"
