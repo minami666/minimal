@@ -3,7 +3,10 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.create(comment_params)
     if @comment.save!
-      redirect_to roomimage_path(params[:roomimage_id])
+      respond_to do |format|
+        format.html { redirect_to roomimage_path(params[:roomimage_id])  }
+        format.json
+      end
     else
       redirect_to roomimage_path(params[:roomimage_id])
     end

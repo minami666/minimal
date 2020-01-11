@@ -33,7 +33,7 @@
   -# ============ コメントフォーム ============
   .roomimages_show__commentform
     .roomimages_show__commentform__box1
-    = form_for [@room,@comment] do |c|
+    = form_for [@room,@comment],class: "comment_ajax" do |c|
       - if user_signed_in?
         .roomimages_show__commentform__box1__text
           = c.text_area :text,placeholder: "コメントを入力してください",class: "roomimages_show__commentform__box1__text--area"
