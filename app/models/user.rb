@@ -35,6 +35,10 @@ class User < ApplicationRecord
     self.roomlikes.exists?(roomimage_id: roomimage.id)
   end
 
+  # ============ 部屋コメント ============
+  has_many :comments, dependent: :destroy
+
+
   # ============ モノ ============
   has_many :items,dependent: :destroy
 

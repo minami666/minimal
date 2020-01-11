@@ -1,7 +1,8 @@
 class CommentsController < ApplicationController
 
   def create
-    @comment = Comment.create!(comments_params)
+    @roomimage = Roomimage.find(params[:id])
+    @comment = Comment.new(comments_params)
     if @comment.save
       redirect_to user_path(current_user)
     else
