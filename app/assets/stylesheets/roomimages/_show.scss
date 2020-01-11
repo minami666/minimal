@@ -41,8 +41,29 @@
       }
     }
   }
-  &__back{
-    margin: 10px 0 10px 10px;
+  // ============ コメントフォーム ============
+  &__commentform{
+    margin-top: 30px;
+    &__box1{
+      &__text{
+        &--area{
+          width: 100%;
+        }
+      }
+      &__submit{
+        &--button{
+          border: 1px solid $link_button;
+          border-radius: 5px;
+          padding: 8px 20px;
+          color: white;
+          background-color: $link_button;
+        }
+      }
+    }
+  }
+  // ============ コメント一覧 ============
+  &__commentindex{
+
   }
 }
 
