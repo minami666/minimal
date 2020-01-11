@@ -30,14 +30,17 @@
             - @room.liked_users.last(10).each do |user|
               = image_tag user.image.url,size: "40x40", class: "roomimages_show__likeduser__image"
 
-  .roomimages_show__commentbox
+  .roomimages_show__commentform
     .roomimages_show__commentbox__form
-    = form_for(@comment,url: roomimage_comments_path(roomimage_id: params[:id]),method: :post) do |c|
+    = form_for [@room,@comment] do |c|
       .roomimages_show__commentbox__form__text
         = c.text_area :text,placeholder: "本文",class: "comment"
       .roomimages_show__commentbox__form__text__submit
         = c.submit "投稿",class: "submit"
-    .roomimages_show__commentbox__comments
+
+  .roomimages_show__commentindex
+    - @comments.each do |comments|
+      = comments.text
 
 = image_tag @room.image.url,class: "roomshowradius wrapper__roomimages_modal"
 

@@ -1,17 +1,17 @@
 class CommentsController < ApplicationController
 
   def create
-    @roomimage = Roomimage.find(params[:id])
-    @comment = Comment.new(comments_params)
-    if @comment.save
-      redirect_to user_path(current_user)
+    @comment = Comment.create(comment_params)
+    # binding.pry
+    if @comment.save!
+      redirect_to root_path
     else
-      redirect_to user_path(current_user)
+      redirect_to root_path
     end
   end
 
   private
-    def comments_params
+    def comment_params
       params.require(:comment).permit(:text).merge(user_id: current_user.id,roomimage_id: params[:roomimage_id])
     end
 end

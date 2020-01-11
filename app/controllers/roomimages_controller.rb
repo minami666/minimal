@@ -15,6 +15,8 @@ class RoomimagesController < ApplicationController
     @room = Roomimage.find(params[:id])
     @roomlike = Roomlike.new
     @user = @room.user
+    @comment = Comment.new
+    @comments = @room.comments
   end
 
   def new
