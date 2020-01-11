@@ -34,15 +34,23 @@
   .roomimages_show__commentform
     .roomimages_show__commentform__box1
     = form_for [@room,@comment] do |c|
-      .roomimages_show__commentform__box1__text
-        = c.text_area :text,placeholder: "本文",class: "roomimages_show__commentform__box1__text--area"
-      .roomimages_show__commentform__box1__submit
-        = c.submit "投稿",class: "roomimages_show__commentform__box1__submit--button"
+      - if user_signed_in?
+        .roomimages_show__commentform__box1__text
+          = c.text_area :text,placeholder: "コメントを入力してください",class: "roomimages_show__commentform__box1__text--area"
+        .roomimages_show__commentform__box1__submit
+          = c.submit "投稿",class: "roomimages_show__commentform__box1__submit--button"
+      - else
+        %p ログインするとコメントができます
 
     -# ============ コメント一覧 ============
   .roomimages_show__commentindex
+    %p コメント一覧
     - @comments.each do |comments|
-      = comments.text
+      .roomimages_show__commentindex__box2
+        .roomimages_show__commentindex__box2__images
+          = image_tag comments.user.image.url,size: "50x50",class: "roomimages_show__commentindex__box2__images--radius"
+        .roomimages_show__commentindex__box2__texts
+          = comments.text
 
 = image_tag @room.image.url,class: "roomshowradius wrapper__roomimages_modal"
 

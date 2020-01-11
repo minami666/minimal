@@ -48,6 +48,8 @@
       &__text{
         &--area{
           width: 100%;
+          border: 1px solid $heading;
+          border-radius: 5px;
         }
       }
       &__submit{
@@ -55,6 +57,7 @@
           border: 1px solid $link_button;
           border-radius: 5px;
           padding: 8px 20px;
+          // margin: ;
           color: white;
           background-color: $link_button;
         }
@@ -63,7 +66,23 @@
   }
   // ============ コメント一覧 ============
   &__commentindex{
+    margin-top: 20px;
+    color: rgb(65, 65, 65);
+    &__box2{
+      border-top: 1px solid $heading;
+      border-top: 1px solid $heading;
+      padding: 15px 0;
+      display: flex;
+      &__images{
+        margin-right: 15px;
+        &--radius{
+          border-radius: 50%;
+        }
+      }
+      &__texts{
 
+      }
+    }
   }
 }
 

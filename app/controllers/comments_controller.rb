@@ -2,11 +2,10 @@ class CommentsController < ApplicationController
 
   def create
     @comment = Comment.create(comment_params)
-    # binding.pry
     if @comment.save!
-      redirect_to root_path
+      redirect_to roomimage_path(params[:roomimage_id])
     else
-      redirect_to root_path
+      redirect_to roomimage_path(params[:roomimage_id])
     end
   end
 
