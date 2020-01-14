@@ -72,3 +72,6 @@ gem 'ransack'
 gem 'kaminari'
 gem 'jp_prefecture'
 gem 'simple_form'
+group :production do
+  gem 'unicorn', '5.4.1'
+end

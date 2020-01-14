@@ -1,11 +1,9 @@
 .roomimages_show{
   @include wholebox;
-
-  // タイトル
-  &__title{
-    margin-bottom: 10px;
+  z-index: 1;
+  &__topbox{
+    margin: 0 0 10px 10px;
   }
-
   &__room_detail{
     display: flex;
     &__left{
@@ -19,12 +17,108 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      &__likeduser{
-        &__image{
-          border-radius: 50%;
-          margin: 5px;
+      &__like{
+        border-top: 1px solid $heading;
+        &__counts{
+          font-size: 20px;
+          &__image{
+            border-radius: 50%;
+            margin: 5px;
+          }
+        }
+        &__delete{
+
+        }
+        &__users{
+          &--title{
+            color: $heading;
+            margin: 10px 0;
+          }
+          &--userimage{
+
+          }
         }
       }
     }
   }
+  // ============ コメントフォーム ============
+  &__commentform{
+    margin-top: 30px;
+    &__box1{
+      &__text{
+        &--area{
+          width: 100%;
+          border: 1px solid $heading;
+          border-radius: 5px;
+        }
+      }
+      &__submit{
+        &--button{
+          border: 1px solid $link_button;
+          border-radius: 5px;
+          padding: 8px 20px;
+          // margin: ;
+          color: white;
+          background-color: $link_button;
+        }
+      }
+    }
+  }
+  // ============ コメント一覧 ============
+  &__commentindex{
+    margin-top: 20px;
+    color: rgb(65, 65, 65);
+    &__box2{
+      border-top: 1px solid $heading;
+      border-top: 1px solid $heading;
+      padding: 15px 0;
+      display: flex;
+      &__images{
+        margin-right: 15px;
+        &--radius{
+          border-radius: 50%;
+        }
+      }
+      &__texts{
+
+      }
+    }
+  }
+}
+
+.wrapper__roomimages_modal{
+  opacity: 0.3;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  z-index: 10001;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  border-radius: 5px;
+}
+
+.room_modal{
+  opacity: 1;
+}
+
+.likesbutton--delete{
+  font-size: 20px;
+  color: white;
+  background-color: $link_button;
+  border-style: none;
+  border-radius: 5px;
+  padding: 10px 5px;
+  margin: 20px 0;
+}
+
+.likesbutton--do{
+  font-size: 20px;
+  color:$link_button;
+  border: 1px solid $link_button;
+  border-radius: 5px;
+  padding: 10px 8px;
+  margin: 20px 0;
 }

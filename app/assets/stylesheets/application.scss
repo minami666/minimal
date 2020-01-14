@@ -48,6 +48,19 @@
   min-height: 100vh;
   position: relative;
 }
+
+.test {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 10000;
+  background-color: #000;
+  opacity: 0.5;
+  pointer-events: none;
+  display: none;
+}
+
 /*
  *= require_tree .
  *= require twitter_bootstrap/bootstrap.min.css

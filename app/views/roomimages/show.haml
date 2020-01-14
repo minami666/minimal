@@ -1,35 +1,57 @@
 = render "partial/header"
 
 .roomimages_show
-  .roomimages_show__title
+  .roomimages_show__topbox
     = link_to "#{@user.nickname}さん",user_path(@user)
     の部屋
-
   .roomimages_show__room_detail
     .roomimages_show__room_detail__left
-      = image_tag @room.image.url,class: "roomshowradius",size: "600x600"
+      = image_tag @room.image.url,class: "roomshowradius",size: "500x500"
     .roomimages_show__room_detail__right
       .roomimages_show__room_detail__right__text
         = @room.text
       -# =============== いいね ===============
-      .roomimages_show__room_detail__right__good
-        .roomimages_show__likecounts
-          = @room.roomlikes.count
-          %span いいね数
-
-        .roomimages_show__likedelete
+      .roomimages_show__room_detail__right__like
+        .roomimages_show__room_detail__right__like__delete
           - if user_signed_in?
             - if current_user.already_liked?(@room)
-              = button_to 'いいねを取り消す', roomimage_roomlike_path(@room), method: :delete,remote: true
+              = button_to 'いいね!を取り消す', roomimage_roomlike_path(@room), method: :delete,local: true,class: "likesbutton--delete"
             -  else
-              = button_to 'いいね', roomimage_roomlikes_path(@room),remote: true
+              = button_to 'いいね!', roomimage_roomlikes_path(@room),local: true,class: "likesbutton--do"
 
-        .roomimages_show__likeduser
-          %p stared by
-          - @room.liked_users.each do |user|
-            = image_tag user.image.url,size: "40x40", class: "roomimages_show__likeduser__image"
+        .roomimages_show__room_detail__right__like__counts
+          いいね数
+          = @room.roomlikes.count
 
-        .roomimages_show__home
-          = link_to "#{@user.nickname}さんの詳細ページへ戻る", user_path(@user)
+        .roomimages_show__room_detail__right__like__users
+          .roomimages_show__room_detail__right__like__users--title
+            いいねしたユーザー
+          .roomimages_show__room_detail__right__like__users--userimages
+            - @room.liked_users.last(10).each do |user|
+              = image_tag user.image.url,size: "40x40", class: "roomimages_show__likeduser__image"
+
+  -# ============ コメントフォーム ============
+  .roomimages_show__commentform
+    .roomimages_show__commentform__box1
+    = form_for [@room,@comment],class: "comment_ajax" do |c|
+      - if user_signed_in?
+        .roomimages_show__commentform__box1__text
+          = c.text_area :text,placeholder: "コメントを入力してください",class: "roomimages_show__commentform__box1__text--area"
+        .roomimages_show__commentform__box1__submit
+          = c.submit "投稿",class: "roomimages_show__commentform__box1__submit--button"
+      - else
+        %p ログインするとコメントができます
+
+    -# ============ コメント一覧 ============
+  .roomimages_show__commentindex
+    %p コメント一覧
+    - @comments.each do |comments|
+      .roomimages_show__commentindex__box2
+        .roomimages_show__commentindex__box2__images
+          = image_tag comments.user.image.url,size: "50x50",class: "roomimages_show__commentindex__box2__images--radius"
+        .roomimages_show__commentindex__box2__texts
+          = comments.text
+
+= image_tag @room.image.url,class: "roomshowradius wrapper__roomimages_modal"
 
 = render "partial/footer"
