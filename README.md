@@ -47,14 +47,8 @@
 <br><br>
 
 > 自分のユーザー詳細ページでは「プロフィール編集」
-
-<br>
-
 > 別のユーザーの詳細ページでは「フォロー」
-
-<br>
-
-が表示されます。
+> が表示されます。
 
 <img src="https://user-images.githubusercontent.com/55865498/72426786-ba33c600-37cd-11ea-8a5c-7f2b24718465.png" width=70% align="center">
 
