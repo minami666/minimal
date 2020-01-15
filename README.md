@@ -46,6 +46,16 @@
 
 <br><br>
 
+> 自分のユーザー詳細ページでは「プロフィール編集」
+
+<br>
+
+> 別のユーザーの詳細ページでは「フォロー」
+
+<br>
+
+が表示されます。
+
 <img src="https://user-images.githubusercontent.com/55865498/72426786-ba33c600-37cd-11ea-8a5c-7f2b24718465.png" width=70% align="center">
 
 <br>
@@ -55,17 +65,10 @@
 <br><br>
 
 > フォローボタンを押すとユーザーのフォロー数が増減し、表示される数値も変わります。
-<img src="https://user-images.githubusercontent.com/55865498/72426788-bacc5c80-37cd-11ea-981e-1b268aa9d84d.png" width=70% align="center">
-<br><br>
-
-> 自分のユーザー詳細ページでは「プロフィール編集」
-> 別のユーザーの詳細ページでは「フォロー」
->が表示されます。
-
 <img src="https://user-images.githubusercontent.com/55865498/72426790-bb64f300-37cd-11ea-876c-0dd171bf0e61.png" width=70% align="center">
 <br><br>
 
-<img src="https://user-images.githubusercontent.com/55865498/72426788-bacc5c80-37cd-11ea-981e-1b268aa9d84d.png" width=70% align="center">
+<img src="https://user-images.githubusercontent.com/55865498/72428223-9625b400-37d0-11ea-90b5-5114ade82c89.png" width=70% align="center">
 <br><br>
 
 <!-- =========================== 部屋の詳細 ============================== -->
