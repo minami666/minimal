@@ -1,17 +1,15 @@
-※サービスへのリンクは[こちら](http://13.115.139.14)です。
-
-<br>
-<br>
-<br>
-<br>
-
 <h1 align="center">🔶部屋の写真を見せ合えるSNS🔶</h1>
+<br>
+<h1 align="center">※サービスへのリンクは[こちら](http://13.115.139.14)です。</h1>
+
 <!-- =========================== 見出し ============================== -->
+
 <p align="center">
 <a><a href="http://13.115.139.14/"><img src="https://user-images.githubusercontent.com/55865498/72489783-8a7dd000-3858-11ea-8a78-9b022dd25870.png" height="400px;" /></a>
 </p><br>
 
 <!-- =========================== 使用技術 ============================== -->
+
 <p align="center">
 <a>　</a>
 <a><a href="https://www.ruby-lang.org/ja/"><img src="https://user-images.githubusercontent.com/39142850/71774533-1ddf1780-2fb4-11ea-8560-753bed352838.png" width="70px;" /></a>
