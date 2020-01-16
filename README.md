@@ -4,7 +4,7 @@
 <!-- =========================== 見出し ============================== -->
 
 <p align="center">
-<a><a href="http://13.115.139.14/"><img src="https://user-images.githubusercontent.com/55865498/72489783-8a7dd000-3858-11ea-8a78-9b022dd25870.png" height="400px;" /></a>
+<a><a href="http://13.115.139.14/"><img src="https://user-images.githubusercontent.com/55865498/72489783-8a7dd000-3858-11ea-8a78-9b022dd25870.png" height="600px;" /></a>
 </p><br>
 
 <!-- =========================== 使用技術 ============================== -->
